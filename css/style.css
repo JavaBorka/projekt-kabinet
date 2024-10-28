@@ -1,0 +1,178 @@
+html {
+box-sizing: border-box;
+}
+
+*, :after, :before {
+box-sizing: inherit;
+}
+
+body {
+    font-family: Montserrat;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #000000;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 30px 20px;
+}
+
+.header__image {
+    width: 100%;
+}
+
+.header__logo {
+    width: 160px;
+}
+
+/**********/
+/* header */
+/**********/
+
+/* 
+.header {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: rgb(255, 255, 255, 0.7);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    
+    padding: 20px;
+
+    @media screen and (min-width: 1200px) {
+        padding: 0;
+        left: 0;
+        top: 60px;
+    }
+}
+
+.header__menu-position {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+@media screen and (min-width: 1200px) {
+    justify-content: flex-end;
+}
+}
+
+&__logo-position {
+    position: absolute;
+    width: 150px;
+    top: 20px;
+    right: 20px;
+
+    @media screen and (min-width: 1200px) {
+        top: 18px;
+        left: 130px;
+        width: 230px;
+    }
+}
+
+&__logo {
+    width: 100%;
+} */
+
+
+/*********/
+/* menu **/
+/*********/
+
+
+/* .menu {
+
+    @media screen and (min-width: 1200px) {
+        margin-right: 130px;
+    } */
+
+.menu {
+    font-family: Urbanist;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.menu__checkbox {
+    position: absolute;
+    left: -9999px;
+    /* // funkčně je to stejné jako display: none, ale tento příkaz by mohl způsobit, že některé prohlížeče ho nezobrazí vůbec, tak radši nepoužíváme */
+}
+
+.menu__toggler {
+    cursor: pointer;
+
+    /* @media screen and (min-width: 1200px) {
+        display: none;
+    } */
+    }
+
+.menu__list {
+    display: none;
+    /* //menu list je standardně schovaný */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* @media screen and (min-width: 1200px) {
+        display: flex !important;
+    } */
+}
+
+.menu__link {
+    display: block;
+    /* řádkový prvek změním na blokový, abych mohla klikat na celý řádek, ne jenom na text */
+    font-size: 17px;
+    padding: 13px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+
+    /* @media screen and (min-width: 1200px) {
+        font-size: 18px;
+        padding: 25px;
+    } */
+}
+
+.menu__link:hover {
+        /* color: $c-red-primary;
+        border-bottom: 1px solid $c-red-primary; */
+        color: white;
+        background-color: red;
+}
+
+.menu__checkbox:checked ~ .menu__list {
+        display: block;
+}
+
+.card {
+    margin: 0 40px;
+}
+
+.card__name {
+    font-family: Urbanist;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0
+}
+
+.card__author {
+    text-align: right;
+    font-family: Urbanist;
+    font-size: 15px;
+    font-weight: 600;
+    color: #DC4345;
+    margin: 10px 0 20px 0
+}
+
+.card__content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+
