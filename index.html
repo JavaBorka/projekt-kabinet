@@ -15,7 +15,7 @@
     <header class="header">
         <div class="header__menu">
 
-            <!-- Menu by som chcela vyrobiť JavaScriptom -->
+            <!-- Menu je pre znázornenie vytvorené v CSS, ale chcela by som ho urobiť v JS -->
             <nav class="menu">
                 <input type="checkbox" class="menu__checkbox" id="menu-checkbox">
     
@@ -35,7 +35,10 @@
     </header>
 
     <main>
+        <!-- Všetky cards majú názov článku a meno autora. Niektoré majú text a niektoré majú obrázok. -->
         <section class="card__container">
+
+            <!-- Card s textom -->
             <div class="card">
                 <h1 class="card__name">MÁRNOSŤ VEČNE ZELENÁ</h1>
                 <p class="card__author">Ondřej Galuška</p>
@@ -44,19 +47,21 @@
                 </p>
             </div>
 
+            <!-- Card s fotkou -->
             <div class="card">
-                <h1 class="card__name">MÁRNOSŤ VEČNE ZELENÁ</h1>
-                <p class="card__author">Ondřej Galuška</p>
-                <p class="card__content">
-                    Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.   
+                <h1 class="card__name">NEDISCIPLINOVANÁ NOSTALGIA</h1>
+                <p class="card__author">Martina Ivanová</p>
+                <p class="card__photo">
+                    <a class="card__image-link" href="#"><img class="card__image" src="./images/foltynova-krajina.jpg" alt="Fotka xy"></a>
                 </p>
             </div>
 
+            <!-- Card s textom -->
             <div class="card">
-                <h1 class="card__name">MÁRNOSŤ VEČNE ZELENÁ</h1>
-                <p class="card__author">Ondřej Galuška</p>
+                <h1 class="card__name">PRÓZU ČÍTAM LEN ODDYCHOVO</h1>
+                <p class="card__author">Eva Urbanová</p>
                 <p class="card__content">
-                    Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.   
+                    Po toľkých básnických zbierkach, ktoré prečítam, aby som ich hlbšie analyzovala, sa vždy teším, že ku koncu roka budem čítať už len prózu, bez postranných úmyslov, len tak, z plezíru. 
                 </p>
             </div>
         </section>

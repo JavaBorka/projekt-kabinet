@@ -160,7 +160,7 @@ body {
 
 
 .card {
-    margin: 0 80px;
+    margin: 0 80px 40px 80px;
 }
 
 .card__container {
@@ -183,10 +183,9 @@ body {
     margin: 10px 0 20px 0
 }
 
-.card__content {
-    margin-bottom: 40px;
+.card__image {
+    width: 100%;
 }
-
 
 /***********/
 /* footer */
