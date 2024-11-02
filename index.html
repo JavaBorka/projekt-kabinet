@@ -22,9 +22,9 @@
                 <label for="menu-checkbox" class="menu__toggler">☰</label>
     
                 <ul class="menu__list">
-                    <li class="menu__item"><a class="menu__link" href="#">Eseje</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">Texty</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">O časopise</a></li>
+                    <li class="menu__eseje"><a class="menu__link menu__link--eseje" href="#">Eseje</a></li>
+                    <li class="menu__texty"><a class="menu__link menu__link--texty" href="#">Texty</a></li>
+                    <li class="menu__ocasopise"><a class="menu__link menu__link--ocasopise" href="#">O časopise</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,6 +37,32 @@
     <main>
         <!-- Všetky cards majú názov článku a meno autora. Niektoré majú text a niektoré majú obrázok. -->
         <section class="card__container">
+
+            <!-- Card s textom -->
+            <div class="card card--esej">
+                <h1 class="card__name">MÁRNOSŤ VEČNE ZELENÁ</h1>
+                <p class="card__author">Ondřej Galuška</p>
+                <p class="card__content">
+                    Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.   
+                </p>
+            </div>
+
+            <!-- Card s fotkou -->
+            <div class="card card--texty card--image">
+                <h1 class="card__name">NEDISCIPLINOVANÁ NOSTALGIA</h1>
+                <p class="card__author">Martina Ivanová</p>
+                <p class="card__photo">
+                    <a class="card__image-link" href="#"><img class="card__image" src="./images/foltynova-krajina.jpg" alt="Fotka xy"></a>
+                </p>
+            </div>
+
+            <!-- Card s textom -->
+            <div class="card">
+                <h1 class="card__name">PRÓZU ČÍTAM LEN ODDYCHOVO</h1>
+                <p class="card__author">S Petrom Zagarom sa zhovára Dalfar</p>
+                <p class="card__content">
+                    Naše emócie sa nepremiestňujú rýchlo. Rozlúčiť sa s nejakým miestom alebo osobou im trvá dlhší čas než nášmu telu. Jednotlivé kultúry majú preto rôzne scenáre na vyjadrenie emócie smútku po niečom, čo nás opúšťa, alebo čo opúšťame my. Táto emócia býva označovaná ako nostalgia, resp. v afroamerickom prostredí blues, v nemčine Sehnsucht, v angličtine homesick, v japončine nagori, v slovenčine už spomínaná clivota alebo cnenie, v češtine stesk. Táto fascinujúca jazyková pluralita odráža skutočnosť, že tento druh emočného prežívania má v rozličných kultúrach nepočetné množstvo podôb, prejavov a motivácií.                </p>
+            </div>
 
             <!-- Card s textom -->
             <div class="card">
@@ -52,16 +78,16 @@
                 <h1 class="card__name">NEDISCIPLINOVANÁ NOSTALGIA</h1>
                 <p class="card__author">Martina Ivanová</p>
                 <p class="card__photo">
-                    <a class="card__image-link" href="#"><img class="card__image" src="./images/foltynova-krajina.jpg" alt="Fotka xy"></a>
+                    <a class="card__image-link" href="#"><img class="card__image" src="./images/verbum.jpg" alt="Fotka xy"></a>
                 </p>
             </div>
 
             <!-- Card s textom -->
             <div class="card">
-                <h1 class="card__name">PRÓZU ČÍTAM LEN ODDYCHOVO</h1>
-                <p class="card__author">Eva Urbanová</p>
+                <h1 class="card__name">MÁRNOSŤ VEČNE ZELENÁ</h1>
+                <p class="card__author">Ondřej Galuška</p>
                 <p class="card__content">
-                    Po toľkých básnických zbierkach, ktoré prečítam, aby som ich hlbšie analyzovala, sa vždy teším, že ku koncu roka budem čítať už len prózu, bez postranných úmyslov, len tak, z plezíru. 
+                    Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.   
                 </p>
             </div>
         </section>
