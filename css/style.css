@@ -9,7 +9,7 @@ box-sizing: inherit;
 body {
     font-family: Montserrat;
     font-size: 15px;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.5;
     color: #000000;
     margin: 0;
@@ -273,6 +273,26 @@ ul li:hover::before {
 .fond__container {
     background-color: rgb(143, 217, 251, 0.80);
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+    .fond__container{
+        padding-right: 100px;
+        align-items: flex-end;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .fond__container{
+        padding-right: 190px;
+        align-items: flex-end;
+    }
+}
+
+.fond__text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
