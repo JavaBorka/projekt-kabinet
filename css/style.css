@@ -29,7 +29,14 @@ body {
 @media screen and (min-width: 600px) {
     .header {
       flex-direction: row-reverse;
-      padding: 20px 20px 80px 20px;
+      padding: 20px 20px 70px 20px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .header {
+      flex-direction: row-reverse;
+      padding: 25px 40px 80px 40px;
     }
 }
 
@@ -72,7 +79,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #8FD9FB;
+    background-color: rgb(143, 217, 251, 0.80);
 }
 @media screen and (min-width: 600px) {
     .menu__list {
@@ -104,6 +111,51 @@ body {
     }
 }
 
+/************************************************************/
+/* Underline menu item "O CASOPISE" when hover over element */
+/************************************************************/
+
+/* section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    left: 50%;
+    bottom: -10px;
+    transition: 0.3s all ease-in-out;
+}
+
+ul li:hover::before {
+    width: 100%;
+    left: 0;
+} */
+
 
 /*********/
 /* card */
@@ -116,9 +168,8 @@ body {
 @media screen and (min-width: 600px) {
     .card {
         margin: 0;
-        padding: 20px 20px 0 20px;
+        padding: 20px;
     }
-
 }
 
 .card__container {
@@ -134,10 +185,20 @@ body {
     }
 }
 
+@media screen and (min-width: 1000px) {
+    .card__container {
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-rows: auto auto auto;
+      margin: 0 190px 50px 190px;
+      gap: 3px;
+    }
+}
+
 .card__name {
     font-family: Urbanist;
     font-size: 16px;
     font-weight: 500;
+    text-transform: uppercase;
     margin: 0
 }
 
@@ -168,8 +229,39 @@ body {
 
 @media screen and (min-width: 600px) {
     .card--image:hover img {
-            opacity: 0.5;
+            opacity: 0.3;
         }
+}
+
+.card__photo {
+    position: relative;
+    width: 100%;
+}
+
+.card__text-container {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .card__text-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .card--image:hover .card__text-container {
+        display: block;
+        position: absolute;
+        top: 5px;
+        font-size: 15px;
+        font-weight: 300;
+        color: black;
+        padding: 20px;
+    }
+}
+
+.card__text-content {
+    margin: 0;
 }
 
 
