@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-    <script defer src="./js/index.js"></script>
     <title>Kabinet - internetový časopis</title>
 </head>
 <body>
@@ -38,10 +36,10 @@
 
     <main>
         <!-- Card može byť buď esej alebo ostatné texty. Card može mať fotku a nemusí -->
-        <section class="grid">
+        <section class="card__container">
 
             <!-- Card esej bez fotky-->
-            <div class="grid-item card--esej">
+            <div class="card card--esej">
                 <h1 class="card__name">Márnosť večne zelená</h1>
                 <p class="card__author">Ondřej Galuška</p>
                 <p class="card__content">
@@ -50,7 +48,7 @@
             </div>
 
             <!-- Card ostatní texty s fotkou -->
-            <div class="grid-item card--texty card--image">
+            <div class="card card--texty card--image">
                 <h1 class="card__name">Nedisciplinovaná nostalgia</h1>
                 <p class="card__author">Martina Ivanová</p>
                 <div class="card__photo">
@@ -64,7 +62,7 @@
             </div>
 
             <!-- Card ostatní texty bez fotky -->
-            <div class="grid-item card--texty">
+            <div class="card card--texty">
                 <h1 class="card__name">Prózu čítam len oddychovo</h1>
                 <p class="card__author">S Petrom Zagarom sa zhovára Dalfar</p>
                 <p class="card__content">
@@ -73,7 +71,7 @@
             </div>
 
             <!-- Card esej bez fotky -->
-            <div class="grid-item card--esej">
+            <div class="card card--esej">
                 <h1 class="card__name">Krajinou skeptika</h1>
                 <p class="card__author">Ondřej Galuška</p>
                 <p class="card__content">
@@ -82,7 +80,7 @@
             </div>
 
             <!-- Card esej s fotkou -->
-            <div class="grid-item card--esej card--image">
+            <div class="card card--esej card--image">
                 <h1 class="card__name">Žádný příběh není</h1>
                 <p class="card__author">Viktor Špaček</p>
                 <div class="card__photo">
@@ -96,7 +94,7 @@
             </div>
 
             <!-- Card ostatné texty bez fotky -->
-            <div class="grid-item card--texty">
+            <div class="card card--texty">
                 <h1 class="card__name">Stojím si aj za svojou únavou</h1>
                 <p class="card__author">S Martou Součkovou sa zhovára Dalfar</p>
                 <p class="card__content">
@@ -105,7 +103,7 @@
             </div>
 
             <!-- Card ostatné texty bez fotky -->
-            <div class="grid-item card--texty">
+            <div class="card card--texty">
                 <h1 class="card__name">Stojím si aj za svojou únavou</h1>
                 <p class="card__author">S Martou Součkovou sa zhovára Dalfar</p>
                 <p class="card__content">

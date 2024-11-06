@@ -162,37 +162,39 @@ html {
     /********/
     
     
-    .grid-item {
+    .card {
         margin: 0 80px 40px 80px;
     }
     @media screen and (min-width: 600px) {
-        .grid-item {
+        .card {
             margin: 0;
             padding: 20px;
-            width: 50%;
         }
     }
 
     @media screen and (min-width: 1000px) {
-        .grid-item {
+        .card {
             margin: 0;
             padding: 20px;
-            width: 33.33%;
         }
     }
     
-    .grid {
+    .card__container {
         margin-bottom: 50px;
     }
     @media screen and (min-width: 600px) {
-        .grid {
+        .card__container {
           margin: 0 100px 50px 100px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
         }
     }
     
     @media screen and (min-width: 1000px) {
-        .grid {
+        .card__container {
           margin: 0 190px 50px 190px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
         }
     }
     
