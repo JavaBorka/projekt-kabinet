@@ -1,0 +1,93 @@
+
+/*********/
+/* card */
+/********/
+
+
+.card {
+    margin: 0 80px 40px 80px;
+}
+@media screen and (min-width: 600px) {
+    .card {
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .card {
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+.card__name {
+    font-family: Urbanist;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0
+}
+
+.card__author {
+    text-align: right;
+    font-family: Urbanist;
+    font-size: 15px;
+    font-weight: 600;
+    color: #DC4345;
+    margin: 10px 0 20px 0
+}
+
+.card__image {
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .card--texty:hover {
+        background-color: rgb(143, 217, 251, 0.59);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .card--esej:hover {
+        background-color: rgb(254, 246, 141, 0.85);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .card--image:hover img {
+            opacity: 0.3;
+        }
+}
+
+.card__photo {
+    position: relative;
+    width: 100%;
+}
+
+.card__text-container {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .card__text-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .card--image:hover .card__text-container {
+        display: block;
+        position: absolute;
+        top: 5px;
+        font-size: 15px;
+        font-weight: 300;
+        color: black;
+        padding: 20px;
+    }
+}
+
+.card__text-content {
+    margin: 0;
+}
+    

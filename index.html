@@ -11,118 +11,118 @@
     <title>Kabinet - internetový časopis</title>
 </head>
 <body>
-    
-    <header class="header">
-        <div class="header__menu">
+    <div id="root">
+        <header class="header">
+            <div class="header__menu">
 
-            <!-- Menu bude vyrobené v JS -->
-            <section class="menu">
-                <input type="checkbox" class="menu__checkbox" id="menu-checkbox">
-    
-                <label for="menu-checkbox" class="menu__toggler">☰</label>
-    
-                <ul class="menu__list">
-                    <li class="menu__eseje"><a class="menu__link menu__link--eseje" href="#">Eseje</a></li>
-                    <li class="menu__texty"><a class="menu__link menu__link--texty" href="#">Texty</a></li>
-                    <li class="menu__ocasopise"><a class="menu__link menu__link--ocasopise" href="#">O časopise</a></li>
-                </ul>
+                <!-- Menu bude vyrobené v JS -->
+                <section class="menu">
+                    <!-- <input type="checkbox" class="menu__checkbox" id="menu-checkbox"> -->
+        
+                    <label for="menu-checkbox" class="menu__toggler">☰</label>
+        
+                    <ul class="menu__list">
+                        <li class="menu__eseje"><a class="menu__link menu__link--eseje" href="#">Eseje</a></li>
+                        <li class="menu__texty"><a class="menu__link menu__link--texty" href="#">Texty</a></li>
+                        <li class="menu__ocasopise"><a class="menu__link menu__link--ocasopise" href="#">O časopise</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="header__logo">
+                <a class="header__link" href="#"><img class="header__image" src="./images/logo_kabinet.svg" alt="Kabinet logo"></a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Card može byť buď esej alebo ostatné texty. Card može mať fotku a nemusí -->
+            <section class="card__container">
+
+                <!-- Card esej bez fotky-->
+                <div class="card card--esej">
+                    <h1 class="card__name">Márnosť večne zelená</h1>
+                    <p class="card__author">Ondřej Galuška</p>
+                    <p class="card__content">
+                        Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.
+                    </p>
+                </div>
+
+                <!-- Card ostatní texty s fotkou -->
+                <div class="card card--texty card--image">
+                    <h1 class="card__name">Nedisciplinovaná nostalgia</h1>
+                    <p class="card__author">Martina Ivanová</p>
+                    <div class="card__photo">
+                        <a class="card__image-link" href="#"><img class="card__image" src="./images/foltynova-krajina.jpg" alt="Fotka xy"></a>
+                        <div class="card__text-container">
+                            <p class="card__text-content">
+                                Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card ostatní texty bez fotky -->
+                <div class="card card--texty">
+                    <h1 class="card__name">Prózu čítam len oddychovo</h1>
+                    <p class="card__author">S Petrom Zagarom sa zhovára Dalfar</p>
+                    <p class="card__content">
+                        Naše emócie sa nepremiestňujú rýchlo. Rozlúčiť sa s nejakým miestom alebo osobou im trvá dlhší čas než nášmu telu. Jednotlivé kultúry majú preto rôzne scenáre na vyjadrenie emócie smútku po niečom, čo nás opúšťa, alebo čo opúšťame my. Táto emócia býva označovaná ako nostalgia, resp. v afroamerickom prostredí blues, v nemčine Sehnsucht, v angličtine homesick, v japončine nagori, v slovenčine už spomínaná clivota alebo cnenie, v češtine stesk. Táto fascinujúca jazyková pluralita odráža skutočnosť, že tento druh emočného prežívania má v rozličných kultúrach nepočetné množstvo podôb, prejavov a motivácií.
+                    </p>
+                </div>
+
+                <!-- Card esej bez fotky -->
+                <div class="card card--esej">
+                    <h1 class="card__name">Krajinou skeptika</h1>
+                    <p class="card__author">Ondřej Galuška</p>
+                    <p class="card__content">
+                        Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.   
+                    </p>
+                </div>
+
+                <!-- Card esej s fotkou -->
+                <div class="card card--esej card--image">
+                    <h1 class="card__name">Žádný příběh není</h1>
+                    <p class="card__author">Viktor Špaček</p>
+                    <div class="card__photo">
+                        <a class="card__image-link" href="#"><img class="card__image" src="./images/verbum.jpg" alt="Fotka xy"></a>
+                        <div class="card__text-container">
+                            <p class="card__text-content">
+                                Čítam v semienkach paprade o poslednom daždi, o mori premenenom na jazero, hnedým prachom nakreslí na brucho súhvezdia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card ostatné texty bez fotky -->
+                <div class="card card--texty">
+                    <h1 class="card__name">Stojím si aj za svojou únavou</h1>
+                    <p class="card__author">S Martou Součkovou sa zhovára Dalfar</p>
+                    <p class="card__content">
+                        O šialenstve či vojne predsa písali mnohí autori, no zaujali ma len niektorí z nich. A čo sa nás vlastne týka, čo je pre nás bytostné? Čítame o udalostiach, ktoré sme nikdy nezažili, a predsa akoby sa nám diali.
+                    </p>
+                </div>
+
+                <!-- Card ostatné texty bez fotky -->
+                <div class="card card--texty">
+                    <h1 class="card__name">Stojím si aj za svojou únavou</h1>
+                    <p class="card__author">S Martou Součkovou sa zhovára Dalfar</p>
+                    <p class="card__content">
+                        O šialenstve či vojne predsa písali mnohí autori, no zaujali ma len niektorí z nich. A čo sa nás vlastne týka, čo je pre nás bytostné? Čítame o udalostiach, ktoré sme nikdy nezažili, a predsa akoby sa nám diali.
+                    </p>
+                </div>
             </section>
-        </div>
+        </main>
 
-        <div class="header__logo">
-            <a class="header__link" href="#"><img class="header__image" src="./images/logo_kabinet.svg" alt="Kabinet logo"></a>
-        </div>
-    </header>
-
-    <main>
-        <!-- Card može byť buď esej alebo ostatné texty. Card može mať fotku a nemusí -->
-        <section class="card__container">
-
-            <!-- Card esej bez fotky-->
-            <div class="card card--esej">
-                <h1 class="card__name">Márnosť večne zelená</h1>
-                <p class="card__author">Ondřej Galuška</p>
-                <p class="card__content">
-                    Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.
-                </p>
-            </div>
-
-            <!-- Card ostatní texty s fotkou -->
-            <div class="card card--texty card--image">
-                <h1 class="card__name">Nedisciplinovaná nostalgia</h1>
-                <p class="card__author">Martina Ivanová</p>
-                <div class="card__photo">
-                    <a class="card__image-link" href="#"><img class="card__image" src="./images/foltynova-krajina.jpg" alt="Fotka xy"></a>
-                    <div class="card__text-container">
-                        <p class="card__text-content">
-                            Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.
-                        </p>
-                    </div>
+        <footer>
+            <div class="fond__container">
+                <div class="fond__text-container">
+                    <p class="fond__content">Časopis z verejných zdrojov podporil</p>
+                    <a class="fond__link" href="#"><img class="fond__image" src="./images/fpu_logo2_cierne_1.svg" alt="Fond na podporu umenia logo"></a>
+                    <p class="fond__issn">ISSN 2729-7993</p>
+                    <p class="fond__copyright">Copyright © 2024 KABINET | All rights reserved</p>
                 </div>
             </div>
-
-            <!-- Card ostatní texty bez fotky -->
-            <div class="card card--texty">
-                <h1 class="card__name">Prózu čítam len oddychovo</h1>
-                <p class="card__author">S Petrom Zagarom sa zhovára Dalfar</p>
-                <p class="card__content">
-                    Naše emócie sa nepremiestňujú rýchlo. Rozlúčiť sa s nejakým miestom alebo osobou im trvá dlhší čas než nášmu telu. Jednotlivé kultúry majú preto rôzne scenáre na vyjadrenie emócie smútku po niečom, čo nás opúšťa, alebo čo opúšťame my. Táto emócia býva označovaná ako nostalgia, resp. v afroamerickom prostredí blues, v nemčine Sehnsucht, v angličtine homesick, v japončine nagori, v slovenčine už spomínaná clivota alebo cnenie, v češtine stesk. Táto fascinujúca jazyková pluralita odráža skutočnosť, že tento druh emočného prežívania má v rozličných kultúrach nepočetné množstvo podôb, prejavov a motivácií.
-                </p>
-            </div>
-
-            <!-- Card esej bez fotky -->
-            <div class="card card--esej">
-                <h1 class="card__name">Krajinou skeptika</h1>
-                <p class="card__author">Ondřej Galuška</p>
-                <p class="card__content">
-                    Márnosť prebýva v bezprostrednom susedstve zmyslu a – ako autor ukazuje – sú dokonca nerozlučne prestúpené ako jin a jang každej skutočnosti.   
-                </p>
-            </div>
-
-            <!-- Card esej s fotkou -->
-            <div class="card card--esej card--image">
-                <h1 class="card__name">Žádný příběh není</h1>
-                <p class="card__author">Viktor Špaček</p>
-                <div class="card__photo">
-                    <a class="card__image-link" href="#"><img class="card__image" src="./images/verbum.jpg" alt="Fotka xy"></a>
-                    <div class="card__text-container">
-                        <p class="card__text-content">
-                            Čítam v semienkach paprade o poslednom daždi, o mori premenenom na jazero, hnedým prachom nakreslí na brucho súhvezdia.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card ostatné texty bez fotky -->
-            <div class="card card--texty">
-                <h1 class="card__name">Stojím si aj za svojou únavou</h1>
-                <p class="card__author">S Martou Součkovou sa zhovára Dalfar</p>
-                <p class="card__content">
-                    O šialenstve či vojne predsa písali mnohí autori, no zaujali ma len niektorí z nich. A čo sa nás vlastne týka, čo je pre nás bytostné? Čítame o udalostiach, ktoré sme nikdy nezažili, a predsa akoby sa nám diali.
-                </p>
-            </div>
-
-            <!-- Card ostatné texty bez fotky -->
-            <div class="card card--texty">
-                <h1 class="card__name">Stojím si aj za svojou únavou</h1>
-                <p class="card__author">S Martou Součkovou sa zhovára Dalfar</p>
-                <p class="card__content">
-                    O šialenstve či vojne predsa písali mnohí autori, no zaujali ma len niektorí z nich. A čo sa nás vlastne týka, čo je pre nás bytostné? Čítame o udalostiach, ktoré sme nikdy nezažili, a predsa akoby sa nám diali.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="fond__container">
-            <div class="fond__text-container">
-                <p class="fond__content">Časopis z verejných zdrojov podporil</p>
-                <a class="fond__link" href="#"><img class="fond__image" src="./images/fpu_logo2_cierne_1.svg" alt="Fond na podporu umenia logo"></a>
-                <p class="fond__issn">ISSN 2729-7993</p>
-                <p class="fond__copyright">Copyright © 2024 KABINET | All rights reserved</p>
-            </div>
-        </div>
-    </footer>
-    
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,52 @@
+
+/***********/
+/* footer */
+/*********/
+
+
+.fond__container {
+    background-color: rgb(143, 217, 251, 0.80);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+    .fond__container{
+        padding-right: 100px;
+        align-items: flex-end;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .fond__container{
+        padding-right: 190px;
+        align-items: flex-end;
+    }
+}
+
+.fond__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fond__image {
+    width: 240px;
+}
+
+.fond__content {
+    font-size: 14px;
+    margin: 0;
+}
+
+.fond__issn {
+    font-size: 14px;
+    margin: 0;
+}
+
+.fond__copyright {
+    font-size: 10px;
+    margin-bottom: 0;
+}
