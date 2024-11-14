@@ -1,2 +1,2 @@
-export { Card } from "./Card.jsx"
+export { Card } from "./Card"
 export { Content } from "./Content.jsx"

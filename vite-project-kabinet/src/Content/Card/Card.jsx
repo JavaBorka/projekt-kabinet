@@ -1,21 +1,8 @@
 import "./card.style.css"
+import { Image } from "./Image.jsx"
+import {Headline} from "vite-project-kabinet/src/common/Headline.jsx";
 
-export const Card = ({genre, title, author, content, image}) => {
-
-    const displayImage = () => {
-        return (
-            <div className="card__photo">
-                <a className="card__image-link" href="#">
-                    <img className="card__image" src={image} alt="Fotka xy" />
-                </a>
-                <div className="card__text-container">
-                    <p className="card__text-content">
-                        {content}
-                    </p>
-                </div>
-            </div>
-        )
-    }
+export const Card = ({genre, title, author, image}) => {
 
     const displayContent = () => {
         return (
@@ -33,7 +20,7 @@ export const Card = ({genre, title, author, content, image}) => {
             else {
                 return `card card--texty card--image`
             }
-        } 
+        }
         else {
             if (genre === "esej") {
                 return `card card--esej`
@@ -43,15 +30,16 @@ export const Card = ({genre, title, author, content, image}) => {
             }
         }
     }
-
     return (
       <>
         <div className={cardClassName()}>
-            <h1 className="card__name">{title}</h1>
+            <Headline>{title}</Headline>
             <p className="card__author">{author}</p>
-            { image && displayImage() }
+            { image && <Image image={image} content={content} /> }
             { !image && displayContent()}
         </div>
       </>
     )
   }
+
+
