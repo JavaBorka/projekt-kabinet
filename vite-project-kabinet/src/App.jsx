@@ -30,7 +30,7 @@ const data = [
   {
   id: 4,
   zaner: "esej",
-  foto: "",
+  foto: "/assets/dummy/verbum.jpg",
   nazov: "Ako sa z ľudí stávajú sochy",
   autor: "Juraj Briškár",
   obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
@@ -38,7 +38,7 @@ const data = [
   {
   id: 5,
   zaner: "texty",
-  foto: "../assets/dummy/hilma.jpg",
+  foto: "/assets/dummy/hilma.jpg",
   nazov: "Ako sa z ľudí stávajú sochy",
   autor: "Juraj Briškár",
   obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
@@ -57,9 +57,9 @@ export const App = () => {
 
   return (
     <>
-      < Header />
-      < Content articles={data} />
-      < Footer />
+      <Header />
+      <Content articles={data} />
+      <Footer />
     </>
   )
 }
