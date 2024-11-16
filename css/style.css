@@ -320,3 +320,64 @@ html {
         font-size: 10px;
         margin-bottom: 0;
     }
+
+    /***************/
+    /* pagination */
+    /**************/
+
+    /* .velikosti {
+	vynulujeme výchozí odsazení odrážkového seznamu
+	margin: 0;
+	padding: 0;
+
+	odstraníme odrážky z odrážkového seznamu
+	list-style: none;
+
+	a uděláme z něho flexbox - tj. velikosti bot budou vedle sebe
+	display: flex;
+
+	zarovnáme položky flexboxu na jejich vertikální střed
+	align-items: center;
+} */
+
+/* .velikosti li {
+	vynulujeme standardně nastavená odsazení odrážek v seznamu.
+	Pouze chceme, aby vpravo od položky byla mezera 10px, aby byly velikosti bot od sebe mírně odsazené
+	margin: 0 10px 0 0;
+	padding: 0;
+
+	nastavíme velikosti položky seznamu na pevné hodnoty, šířka a výška jsou stejné, abychom mohli pomocí border-radius udělat kolem položky kolečko
+	width: 30px;
+	height: 30px;
+
+	nastavíme výšku řádku na stejnou hodnotu, jako je výška položky seznamu, což znamená, že text je vertikálně uprostřed řádku, tj. i uprostřed kolečka, když bude položka vybraná
+	line-height: 30px;
+
+	vycentrujeme i horizontálně
+	text-align: center;
+
+	orámování je sice průhlednou (transparent) barvou, ale už existuje, takže při najetí myši změníme jen jeho barvu. Kdybychom při najetí myši přidávali celý okraj, číslo uvnitř by nám poskakovalo nebo by se měnila velikost prvku o přidaný okraj
+	border: 1px solid transparent;
+
+	rámeček ve tvaru kolečka
+	border-radius: 50%;
+
+	kursor nad prvkem má tvar ruky s namířeným ukazováčkem
+	cursor: pointer;
+} */
+
+/* .velikosti li:hover,
+.velikosti li:active,
+.velikosti li:focus,
+.velikosti li.vybrana {
+	barva textu a rámečku pro vybranou velikost bot (nebo tu, nad kterou je myš)
+	font-weight: 500;
+	color: #f15f42;
+	border: 1px solid #f15f42;
+} */
+
+
+
+
+
+    
