@@ -8,7 +8,7 @@ export const Content = ({articles}) => {
         <main>
             <section className="card__container">
               {articles.map(article =>
-                <Card key={article.id} genre={article.zaner} title={article.nazov} author={article.autor} content={article.obsah} image={article.foto} />
+                <Card key={article.id} genre={article.genre} title={article.title} author={article.author} content={article.content} image={article.image} />
               )}
             </section>
         </main>

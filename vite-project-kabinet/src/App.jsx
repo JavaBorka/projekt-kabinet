@@ -5,51 +5,51 @@ import { Footer } from  "./Footer/Footer.jsx"
 const data = [
   {
     id: 1,
-    zaner: "esej",
-    foto: "",
-    nazov: "Ako sa z ľudí stávajú sochy",
-    autor: "Juraj Briškár",
-    obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
+    genre: "esej",
+    image: "",
+    title: "Ako sa z ľudí stávajú sochy",
+    author: "Juraj Briškár",
+    content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
   },
   {
     id: 2,
-    zaner: "texty",
-    foto: "../assets/dummy/hilma.jpg",
-    nazov: "Ako sa z ľudí stávajú sochy",
-    autor: "Juraj Briškár",
-    obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
+    genre: "texty",
+    image: "/assets/dummy/foltynova-krajina.jpg",
+    title: "Ako sa z ľudí stávajú sochy",
+    author: "Juraj Briškár",
+    content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
   },
   {
     id: 3,
-    zaner: "texty",
-    foto: "",
-    nazov: "Ako sa z ľudí stávajú sochy",
-    autor: "Juraj Briškár",
-    obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
+    genre: "esej",
+    image: "",
+    title: "Ako sa z ľudí stávajú sochy",
+    author: "Juraj Briškár",
+    content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
   },
   {
-  id: 4,
-  zaner: "esej",
-  foto: "",
-  nazov: "Ako sa z ľudí stávajú sochy",
-  autor: "Juraj Briškár",
-  obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
+    id: 4,
+    genre: "esej",
+    image: "/assets/dummy/hilma.jpg",
+    title: "Ako sa z ľudí stávajú sochy",
+    author: "Juraj Briškár",
+    content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
   },
   {
-  id: 5,
-  zaner: "texty",
-  foto: "../assets/dummy/hilma.jpg",
-  nazov: "Ako sa z ľudí stávajú sochy",
-  autor: "Juraj Briškár",
-  obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
+    id: 5,
+    genre: "texty",
+    image: "",
+    title: "Ako sa z ľudí stávajú sochy",
+    author: "Juraj Briškár",
+    content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
  },
  {
   id: 6,
-  zaner: "esej",
-  foto: "",
-  nazov: "Ako sa z ľudí stávajú sochy",
-  autor: "Juraj Briškár",
-  obsah: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
+  genre: "esej",
+  image: "",
+  title: "Ako sa z ľudí stávajú sochy",
+  author: "Juraj Briškár",
+  content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
  },
 ]
 

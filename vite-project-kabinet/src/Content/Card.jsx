@@ -1,29 +1,8 @@
+import { Image } from "./Image.jsx"
+import { Article } from "./Article.jsx"
 import "./card.style.css"
 
 export const Card = ({genre, title, author, content, image}) => {
-
-    const displayImage = () => {
-        return (
-            <div className="card__photo">
-                <a className="card__image-link" href="#">
-                    <img className="card__image" src={image} alt="Fotka xy" />
-                </a>
-                <div className="card__text-container">
-                    <p className="card__text-content">
-                        {content}
-                    </p>
-                </div>
-            </div>
-        )
-    }
-
-    const displayContent = () => {
-        return (
-            <p class="card__content">
-                {content}
-            </p>
-        )
-    }
 
     const cardClassName = () => {
         if (image) {
@@ -49,8 +28,8 @@ export const Card = ({genre, title, author, content, image}) => {
         <div className={cardClassName()}>
             <h1 className="card__name">{title}</h1>
             <p className="card__author">{author}</p>
-            { image && displayImage() }
-            { !image && displayContent()}
+            { image && <Image image={image} content={content}/> }
+            { !image && <Article content={content}/>}
         </div>
       </>
     )
