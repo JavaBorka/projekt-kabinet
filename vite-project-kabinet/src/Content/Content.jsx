@@ -1,16 +1,13 @@
 import "./content.style.css"
-import { Card } from "./Card.jsx"
+// import { Card } from "./Card.jsx"
+import { PaginatedList } from "./PaginatedList.jsx"
 
 
 export const Content = ({articles}) => {
 
   return (
-        <main>
-            <section className="card__container">
-              {articles.map(article =>
-                <Card key={article.id} genre={article.genre} title={article.title} author={article.author} content={article.content} image={article.image} />
-              )}
-            </section>
-        </main>
+    <main>
+          <PaginatedList items={articles} itemsPerPage={6}/>
+    </main>
   )
 }

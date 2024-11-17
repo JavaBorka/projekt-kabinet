@@ -178,26 +178,6 @@ html {
         }
     }
     
-    /* .card__container {
-        margin-bottom: 50px;
-    }
-    @media screen and (min-width: 600px) {
-        .card__container {
-          margin: 0 100px 50px 100px;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        }
-    }
-    
-    @media screen and (min-width: 1000px) {
-        .card__container {
-          margin: 0 190px 50px 190px;
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-    } */
-
-    /* Doplnit media query pro main a upravit card__container */
     main {
         margin-bottom: 50px;
     }
@@ -366,32 +346,29 @@ html {
 
     @media screen and (min-width: 600px) {
         .pages {
-            margin: 15px 0 0 0;
-            padding: 0;
-            list-style: none;
             display: flex;
-            align-items: center;
             justify-content: flex-end;
         }
     }
 
-    .pages li {
-        margin: 0 10px 0 0;
+    .pages__numbers {
+        margin: 0 10px;
         padding: 0;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+
+    .pages img {
+        width: 35%;
+    }
+
+    button {
+        background-color: white;
         border: 1px solid #DC4345;
         cursor: pointer;
-    }
-
-    .pages__selected {
-        font-weight: 600;
-    }
-
-    .pages li:hover,
-    .pages li:active,
-    .pages li:focus {
-        font-weight: 600;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
     }
