@@ -15,7 +15,6 @@ html {
         margin: 0;
     }
     
-    
     /**********/
     /* header */
     /**********/
@@ -179,7 +178,7 @@ html {
         }
     }
     
-    .card__container {
+    /* .card__container {
         margin-bottom: 50px;
     }
     @media screen and (min-width: 600px) {
@@ -193,6 +192,42 @@ html {
     @media screen and (min-width: 1000px) {
         .card__container {
           margin: 0 190px 50px 190px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+    } */
+
+    /* Doplnit media query pro main a upravit card__container */
+    main {
+        margin-bottom: 50px;
+    }
+
+    @media screen and (min-width: 600px) {
+        main {
+            margin: 0 100px 50px 100px;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        main {
+            margin: 0 190px 50px 190px;
+        }
+    }
+
+
+    .card__container {
+        margin: 0;
+    }
+
+    @media screen and (min-width: 600px) {
+        .card__container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    @media screen and (min-width: 1000px) {
+        .card__container {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
         }
@@ -325,59 +360,38 @@ html {
     /* pagination */
     /**************/
 
-    /* .velikosti {
-	vynulujeme výchozí odsazení odrážkového seznamu
-	margin: 0;
-	padding: 0;
+    .pages {
+        display: none;
+    }
 
-	odstraníme odrážky z odrážkového seznamu
-	list-style: none;
+    @media screen and (min-width: 600px) {
+        .pages {
+            margin: 15px 0 0 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
 
-	a uděláme z něho flexbox - tj. velikosti bot budou vedle sebe
-	display: flex;
+    .pages li {
+        margin: 0 10px 0 0;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #DC4345;
+        cursor: pointer;
+    }
 
-	zarovnáme položky flexboxu na jejich vertikální střed
-	align-items: center;
-} */
+    .pages__selected {
+        font-weight: 600;
+    }
 
-/* .velikosti li {
-	vynulujeme standardně nastavená odsazení odrážek v seznamu.
-	Pouze chceme, aby vpravo od položky byla mezera 10px, aby byly velikosti bot od sebe mírně odsazené
-	margin: 0 10px 0 0;
-	padding: 0;
-
-	nastavíme velikosti položky seznamu na pevné hodnoty, šířka a výška jsou stejné, abychom mohli pomocí border-radius udělat kolem položky kolečko
-	width: 30px;
-	height: 30px;
-
-	nastavíme výšku řádku na stejnou hodnotu, jako je výška položky seznamu, což znamená, že text je vertikálně uprostřed řádku, tj. i uprostřed kolečka, když bude položka vybraná
-	line-height: 30px;
-
-	vycentrujeme i horizontálně
-	text-align: center;
-
-	orámování je sice průhlednou (transparent) barvou, ale už existuje, takže při najetí myši změníme jen jeho barvu. Kdybychom při najetí myši přidávali celý okraj, číslo uvnitř by nám poskakovalo nebo by se měnila velikost prvku o přidaný okraj
-	border: 1px solid transparent;
-
-	rámeček ve tvaru kolečka
-	border-radius: 50%;
-
-	kursor nad prvkem má tvar ruky s namířeným ukazováčkem
-	cursor: pointer;
-} */
-
-/* .velikosti li:hover,
-.velikosti li:active,
-.velikosti li:focus,
-.velikosti li.vybrana {
-	barva textu a rámečku pro vybranou velikost bot (nebo tu, nad kterou je myš)
-	font-weight: 500;
-	color: #f15f42;
-	border: 1px solid #f15f42;
-} */
-
-
-
-
-
-    
+    .pages li:hover,
+    .pages li:active,
+    .pages li:focus {
+        font-weight: 600;
+    }
