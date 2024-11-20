@@ -14,7 +14,7 @@ const data = [
   {
     id: 2,
     genre: "texty",
-    image: "/assets/dummy/foltynova-krajina.jpg",
+    image: "/assets/dummy/foltynova_krajina.jpg",
     title: "Ako sa z ľudí stávajú sochy",
     author: "Juraj Briškár",
     content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."

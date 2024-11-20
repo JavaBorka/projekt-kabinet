@@ -1,8 +1,8 @@
 import "./paginated.style.css"
 import { Card } from "./Card.jsx"
 import { useState } from "react";
-import arrowRight from "./assets/sipka_vpravo.svg"
-import arrowLeft from "./assets/sipka_vlevo.svg"
+import arrowRight from "./assets/arrow_right.svg"
+import arrowLeft from "./assets/arrow_left.svg"
 
 export const PaginatedList = ({items, itemsPerPage}) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -32,7 +32,7 @@ export const PaginatedList = ({items, itemsPerPage}) => {
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
-                    <img src={arrowLeft} alt="šipka vlevo"/>
+                    <img src={arrowLeft} alt="arrow left"/>
                 </button>
 
                 <ul className="pages__numbers">
@@ -45,7 +45,7 @@ export const PaginatedList = ({items, itemsPerPage}) => {
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >
-                    <img src={arrowRight} alt="šipka vpravo"/>
+                    <img src={arrowRight} alt="arrow right"/>
                 </button>
             </div>
         </>
