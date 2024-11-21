@@ -1,8 +1,7 @@
 import "./paginated.style.css"
 import { Card } from "./Card.jsx"
 import { useState } from "react";
-import arrowRight from "./assets/arrow_right.svg"
-import arrowLeft from "./assets/arrow_left.svg"
+import { PaginationNav } from "./PaginationNav.jsx";
 
 export const PaginatedList = ({items, itemsPerPage}) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +17,6 @@ export const PaginatedList = ({items, itemsPerPage}) => {
     return (
         <>
             <section className="card__container">
-                {/* Zobrazení seznamu položek - tady namapuju komponentu <Card/> */}
                 {items
                     .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                     .map((item) => (
@@ -26,28 +24,7 @@ export const PaginatedList = ({items, itemsPerPage}) => {
                 ))}
             </section>
 
-            {/* Ovládací prvky*/}
-            <div className="pages">
-                <button 
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                >
-                    <img src={arrowLeft} alt="arrow left"/>
-                </button>
-
-                <ul className="pages__numbers">
-                    <li>
-                        <button>{currentPage}</button>
-                    </li>
-                </ul>
-
-                <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                >
-                    <img src={arrowRight} alt="arrow right"/>
-                </button>
-            </div>
+            <PaginationNav currentPage={currentPage} totalPages={totalPages} handlePageChange={handlePageChange}/>
         </>
     )
   }

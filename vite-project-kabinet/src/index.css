@@ -1,16 +1,24 @@
 html {
   box-sizing: border-box;
-  }
+  height: 100%;
+}
   
-  *, :after, :before {
-  box-sizing: inherit;
-  }
-  
-  body {
-      font-family: Rubik;
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.5;
-      color: #000000;
-      margin: 0;
-  }
+*, :after, :before {
+box-sizing: inherit;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+    font-family: Rubik;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000000;
+    margin: 0;
+    height: 100%;
+}
