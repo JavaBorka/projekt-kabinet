@@ -20,7 +20,7 @@ export const PaginatedList = ({items, itemsPerPage}) => {
                 {items
                     .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                     .map((item) => (
-                    <Card key={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image} />
+                    <Card key={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image}/>
                 ))}
             </section>
 

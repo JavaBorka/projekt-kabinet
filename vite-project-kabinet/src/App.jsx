@@ -83,38 +83,6 @@ const data = [
     author: "Juraj Briškár",
     content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
   },
-  {
-    id: 11,
-    genre: "esej",
-    image: "",
-    title: "Ako sa z ľudí stávajú sochy",
-    author: "Juraj Briškár",
-    content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
-  },
-  {
-  id: 12,
-  genre: "esej",
-  image: "/assets/dummy/hilma.jpg",
-  title: "Ako sa z ľudí stávajú sochy",
-  author: "Juraj Briškár",
-  content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
-  },
-  {
-  id: 13,
-  genre: "texty",
-  image: "",
-  title: "Ako sa z ľudí stávajú sochy",
-  author: "Juraj Briškár",
-  content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
-  },
-  {
-  id: 14,
-  genre: "esej",
-  image: "",
-  title: "Ako sa z ľudí stávajú sochy",
-  author: "Juraj Briškár",
-  content: "Jednu z posledných intenzívnych chvíľ som zažila pri osamelom stúpaní zasneženou lesnou krajinou."
-  },
 ]
 
 export const App = () => {

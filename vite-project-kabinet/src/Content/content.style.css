@@ -33,22 +33,22 @@ main {
   }
 }
 
-
-/* .card__container {
-    margin-bottom: 50px;
+.mobile-only {
+  display: block
 }
+
 @media screen and (min-width: 600px) {
-    .card__container {
-      margin: 0 100px 50px 100px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+  .mobile-only {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 1000px) {
-    .card__container {
-      margin: 0 190px 50px 190px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-} */
+.desktop-only {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .desktop-only {
+    display: block;
+  }
+}
