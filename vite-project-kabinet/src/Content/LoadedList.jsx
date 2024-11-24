@@ -18,7 +18,7 @@ export const LoadedList = ({items, itemsPerPage}) => {
             {visibleCount < items.length && (
                 <div className="pages_mob">
                     <button 
-                        className="button-mob"
+                        className="btn btn-mob"
                         onClick={() => {
                             setVisibleCount(prev => prev + itemsPerPage)
                         }}

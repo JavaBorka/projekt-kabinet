@@ -37,8 +37,8 @@
     width: 35%;
 }
 
-
-button {
+.btn {
+    appearance: none;
     background-color: white;
     border: 1px solid #DC4345;
     cursor: pointer;
@@ -48,12 +48,13 @@ button {
     font-weight: 300;
 }
 
-.button-pc {
+
+.btn-desktop {
     width: 30px;
     height: 30px;
     padding: 0;
 }
 
-.button-mob {
+.btn-mob {
     padding: 10px;
 }

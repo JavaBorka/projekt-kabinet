@@ -6,48 +6,55 @@
 .menu {
     font-family: Urbanist;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 20px;
 }
 
-.menu__checkbox {
-    position: absolute;
-    left: -9999px;
-}
-
-.menu__toggler {
-    cursor: pointer;
-}
 @media screen and (min-width: 600px) {
-    .menu__toggler {
+    .menu {
+        font-size: 17px;
+    }
+}
+
+
+.app_container .menu__list {
+    display: flex;
+    margin: 0;
+    padding: 140px 30px;
+    list-style: none;
+    background-color: rgb(143, 217, 251, 0.80);
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+    .app_container .menu__list {
         display: none;
     }
 }
 
-.menu__list {
+.header .menu__list {
     display: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: rgb(143, 217, 251, 0.80);
 }
+
 @media screen and (min-width: 600px) {
-    .menu__list {
+    .header .menu__list {
         display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
         background-color: white;
+        flex-direction: row;
+        height: auto;
     }
 }
 
 .menu__link {
     display: block;
-    font-size: 16px;
     padding: 13px;
     text-decoration: none;
-    text-align: center;
     color: black;
-}
-
-.menu__checkbox:checked ~ .menu__list {
-        display: block;
 }
 
 @media screen and (min-width: 600px) {
@@ -58,6 +65,25 @@
     .menu__link--texty:hover {
         color: #8FD9FB;
     }
+}
+
+.menu__hamburger {
+    all: unset;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+@media screen and (min-width: 600px) {
+    .menu__hamburger {
+        display: none;
+    }
+}
+
+.menu__hamburger:active {
+    transform: scale(0.9);
 }
 
 /************************************************************/
