@@ -1,5 +1,5 @@
 import "./paginated.style.css"
-import { Card } from "./Card.jsx"
+import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 
 export const LoadedList = ({items, itemsPerPage}) => {
@@ -11,7 +11,7 @@ export const LoadedList = ({items, itemsPerPage}) => {
                 {items
                     .slice(0, visibleCount)
                     .map((item) => (
-                    <Card key={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image}/>
+                    <CardPreview key={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image}/>
                 ))}
             </section>
             

@@ -1,8 +1,8 @@
 import { Image } from "./Image.jsx"
-import { Article } from "./Article.jsx"
+import { CardPreface } from "./CardPreface.jsx"
 import "./card.style.css"
 
-export const Card = ({genre, title, author, content, image}) => {
+export const CardPreview = ({genre, title, author, content, image}) => {
 
     const cardClassName = () => {
         if (image) {
@@ -28,7 +28,7 @@ export const Card = ({genre, title, author, content, image}) => {
             <h1 className="card__name">{title}</h1>
             <p className="card__author">{author}</p>
             { image && <Image image={image} content={content}/> }
-            { !image && <Article content={content}/>}
+            { !image && <CardPreface content={content}/>}
         </div>
     )
   }

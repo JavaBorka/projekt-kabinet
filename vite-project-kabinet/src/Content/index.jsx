@@ -1,5 +1,5 @@
-export { Card } from "./Card.jsx"
+export { CardPreview } from "./CardPreview.jsx"
 export { Content } from "./Content.jsx"
 export { Image } from "./Image.jsx"
-export { Article } from "./Article.jsx"
+export { CardPreface } from "./CardPreface.jsx"
 export { PaginatedList } from "./PaginatedList.jsx"

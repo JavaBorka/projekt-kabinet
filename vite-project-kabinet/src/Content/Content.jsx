@@ -1,8 +1,6 @@
 import "./content.style.css"
 import { PaginatedList } from "./PaginatedList.jsx"
 import { LoadedList } from "./LoadedList.jsx"
-import { Menu } from "../Header/Menu.jsx"
-import "../Header/menu.style.css"
 
 
 export const Content = ({articles}) => {
