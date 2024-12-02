@@ -24,13 +24,11 @@ export const Card = ({genre, title, author, content, image}) => {
     }
 
     return (
-      <>
         <div className={cardClassName()}>
             <h1 className="card__name">{title}</h1>
             <p className="card__author">{author}</p>
             { image && <Image image={image} content={content}/> }
             { !image && <Article content={content}/>}
         </div>
-      </>
     )
   }

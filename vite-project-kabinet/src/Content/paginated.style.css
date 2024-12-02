@@ -1,0 +1,59 @@
+/***************/
+/* pagination */
+/**************/
+
+.pages_pc {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .pages_pc {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+}
+
+.pages_mob {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+    .pages_mob {
+        display: none;
+    }
+}
+
+.pages__numbers {
+    margin: 0 10px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.pages img {
+    width: 35%;
+}
+
+
+button {
+    background-color: white;
+    border: 1px solid #DC4345;
+    cursor: pointer;
+    margin: 0;
+    font-family: "Rubik";
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.button-pc {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.button-mob {
+    padding: 10px;
+}
