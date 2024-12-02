@@ -6,22 +6,20 @@ import "./card.style.css"
 export const CardPreview = ({genre, title, author, content, image}) => {
 
     const cardClassName = () => {
-        if (image) {
-            if (genre === "esej") {
-                return `card card--esej card--image`
-            }
-            else {
-                return `card card--texty card--image`
-            }
-        } 
-        else {
-            if (genre === "esej") {
-                return `card card--esej`
-            }
-            else {
-                return `card card--texty`
-            }
+        const classes = ["card"]
+
+        if (genre === "esej") {
+            classes.push("card--essay")
         }
+        else {
+            classes.push("card--texts")
+        }
+
+        if (image) {
+            classes.push("card--image")
+        }
+
+        return classes.join(" ")
     }
 
     return (
