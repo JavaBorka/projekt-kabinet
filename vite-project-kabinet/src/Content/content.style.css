@@ -1,3 +1,13 @@
+.app_container.menu_open main {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .app_container.menu_open main {
+    display: block;
+  }
+}
+
 main {
   margin-bottom: 50px;
   flex: 1;

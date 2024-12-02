@@ -3,6 +3,15 @@
 /* footer */
 /*********/
 
+.app_container.menu_open footer {
+    display: none
+}
+
+@media screen and (min-width: 600px) {
+    .app_container.menu_open footer {
+        display: block;
+    }
+}
 
 .fond__container {
     background-color: rgb(143, 217, 251, 0.80);
