@@ -1,10 +1,10 @@
 import "./article.style.css"
 
-export const CardFullArticle = () => {
+export const CardFullArticle = ({title}) => {
     return (
         <article className="article">
             <header className="article__header">
-                <h1 className="article__title">Kľúčovou dierkou</h1>
+                <h1 className="article__title">{title}</h1>
                 <span className="article__author">Miroslav Činčár</span>
                 <span className="article__date">24. novembra 2024</span>
             </header>

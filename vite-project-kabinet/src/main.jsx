@@ -11,7 +11,8 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}/>
-      <Route path="/clanek" element={<CardDetail/>}/>
+      <Route path="/esej/:title" element={<CardDetail/>}/>
+      <Route path="/texty/:title" element={<CardDetail/>}/>
     </Routes>
   </BrowserRouter>
 )
