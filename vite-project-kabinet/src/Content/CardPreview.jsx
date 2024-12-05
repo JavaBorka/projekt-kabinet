@@ -1,9 +1,11 @@
 import { Image } from "./Image.jsx"
 import { CardPreface } from "./CardPreface.jsx"
-import { Link } from 'react-router';
+import { Link, Route } from 'react-router'
+import { ROUTE_ESSAYS } from "../constants/routes.js"
+import { ROUTE_TEXTS } from "../constants/routes.js"
 import "./card.style.css"
 
-export const CardPreview = ({genre, title, author, content, image}) => {
+export const CardPreview = ({id, genre, title, author, content, image}) => {
 
     const cardClassName = () => {
         const classes = ["card"]
@@ -22,20 +24,23 @@ export const CardPreview = ({genre, title, author, content, image}) => {
         return classes.join(" ")
     }
 
-    const createSlug = (title) => {
-        return title
+    const createSlug = (originalTitle, genre, id) => {
+        
+        const slug = originalTitle
         .toLowerCase()
-        .normalize('NFD') // Rozdělí znaky s diakritikou
-        .replace(/[\u0300-\u036f]/g, '') // Odstraní diakritiku
-        .replace(/[^\w\s-]/g, '') // Odstraní vše kromě písmen, čísel, pomlček a mezer
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^\w\s-]/g, '')
         .trim()
-        .replace(/\s+/g, '-'); // Nahradí mezery pomlčkami
+        .replace(/\s+/g, '-');
+
+        return (`/${genre === "esej" ? ROUTE_ESSAYS : ROUTE_TEXTS}/${id}-${slug}`)
+
       };
 
     return (
             <div className={cardClassName()}>
-                {/* todo: genre/ID-title */}
-                <Link to={`/${genre === "esej" ? "esej" : "texty"}/${createSlug(title)}`} state={{originalTitle:title}} className="card__link">
+                <Link to = {createSlug(title, genre, id)} state={{originalTitle:title}} className="card__link">
                     <h1 className="card__name">{title}</h1>
                     <p className="card__author">{author}</p>
                     { image && <Image image={image} content={content}/> }
