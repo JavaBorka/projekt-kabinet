@@ -11,7 +11,8 @@ export const LoadedList = ({items, itemsPerPage}) => {
                 {items
                     .slice(0, visibleCount)
                     .map((item) => (
-                    <CardPreview key={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image}/>
+                    <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image}/>
+
                 ))}
             </section>
             
