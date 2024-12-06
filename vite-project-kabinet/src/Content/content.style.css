@@ -42,23 +42,3 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-.mobile-only {
-  display: block
-}
-
-@media screen and (min-width: 600px) {
-  .mobile-only {
-    display: none;
-  }
-}
-
-.desktop-only {
-  display: none;
-}
-
-@media screen and (min-width: 600px) {
-  .desktop-only {
-    display: block;
-  }
-}

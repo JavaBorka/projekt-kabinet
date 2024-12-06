@@ -7,6 +7,7 @@
 .card {
     margin: 0 80px 40px 80px;
 }
+
 @media screen and (min-width: 600px) {
     .card {
         margin: 0;
@@ -43,13 +44,13 @@
 }
 
 @media screen and (min-width: 600px) {
-    .card--texty:hover {
+    .card--texts:hover {
         background-color: rgb(143, 217, 251, 0.59);
     }
 }
 
 @media screen and (min-width: 600px) {
-    .card--esej:hover {
+    .card--essay:hover {
         background-color: rgb(254, 246, 141, 0.85);
     }
 }
@@ -90,4 +91,9 @@
 .card__text-content {
     margin: 0;
 }
-    
+
+.card__link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

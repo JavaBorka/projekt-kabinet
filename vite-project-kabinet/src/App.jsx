@@ -3,7 +3,6 @@ import { Content } from "./Content"
 import { Footer } from  "./Footer/Footer.jsx"
 import { MenuList } from "./Header/MenuList.jsx"
 import { useState } from "react"
-import "./Header/menu.style.css"
 
 const data = [
   {
@@ -95,7 +94,6 @@ export const App = () => {
     <div className={`app_container ${menuOpen && "menu_open"}`}>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
 
-      {/* todo: toto bude chtít asi líp napsat + líp nastylovat seznam - padding kolem položek seznamu, ať se líp kliká */}
       {menuOpen && <section className="menu"><MenuList/></section>}
 
       <Content articles={data}/>
