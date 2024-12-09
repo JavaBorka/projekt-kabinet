@@ -1,0 +1,44 @@
+.article {
+    margin: 10px 60px 60px 60px;
+}
+
+@media screen and (min-width: 600px) {
+    .article {
+        margin: 20px 160px 70px 160px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .article {
+        margin: 20px 240px 70px 240px;
+    }
+}
+
+.article p {
+    border: 1px solid transparent;
+    margin-bottom: 30px;
+}
+
+.article__header {
+    font-family: Urbanist;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.article__title {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+.article__author {
+    font-family: Urbanist;
+    font-size: 15px;
+    font-weight: 600;
+    color: #DC4345;
+    text-transform: uppercase;
+}

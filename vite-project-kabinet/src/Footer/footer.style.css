@@ -31,7 +31,6 @@
 @media screen and (min-width: 1000px) {
     .fond__container{
         padding-right: 190px;
-        align-items: flex-end;
     }
 }
 
@@ -58,4 +57,17 @@
 .fond__copyright {
     font-size: 10px;
     margin-bottom: 0;
+}
+
+@media screen and (min-width: 600px) {
+    .page__container .fond__container {
+        padding-right: 160px;
+        align-items: flex-end;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .page__container .fond__container {
+        padding-right: 240px;
+    }
 }

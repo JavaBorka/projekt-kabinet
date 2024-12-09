@@ -1,7 +1,8 @@
 import './header.style.css'
 import logo from "../Header/logo_kabinet.svg"
 import { Menu } from "./Menu.jsx"
-
+import { Link } from 'react-router';
+ 
 export const Header = ({menuOpen, setMenuOpen}) => {
 
     return (
@@ -11,9 +12,9 @@ export const Header = ({menuOpen, setMenuOpen}) => {
             </div>
 
             <div className="header__logo">
-                <a className="header__link" href="#">
+                <Link to="/">
                     <img className="header__image" src={logo} alt="Kabinet logo"/>
-                </a>
+                </Link>
             </div>
         </header>
     )
