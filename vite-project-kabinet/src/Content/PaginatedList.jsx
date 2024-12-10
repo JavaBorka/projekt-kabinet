@@ -44,8 +44,18 @@ export const PaginatedList = ({items, itemsPerPage}) => {
                 categoryName: newPostCategsArray.join()
             }
         })
+
+        return updatedPosts
     }
-    getPostsWithCategoryName()
+
+    getPostsWithCategoryName().then((data) => {
+        console.log(data)
+    })
+
+    // fetchMyStuff().then(data => {
+    //     console.info('FETCH + AWAIT, ale tentoraz v ASYNC FUNKCII');
+    //     console.log(data)
+    // });
 
     return (
         <>
