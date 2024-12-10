@@ -14,6 +14,29 @@ export const PaginatedList = ({items, itemsPerPage}) => {
         }
     };
 
+    const getPostsWithCategoryName = async () => {
+        const reqPosts = await fetch(`/assets/constants/posts.json`)
+        const posts = await reqPosts.json()
+
+        const reqCategories = await fetch(`/assets/constants/categories.json`)
+        const categories = await reqCategories.json()
+
+        const postsAndCategoryName = posts.map((post) => {
+            const categoryNames = post.categories.map((catId) => {
+                const category = categories.find((category) => category.id === catId)
+    
+                return category ? category.name : "Neznámá kategorie"
+            });
+    
+            return {
+                ...post,
+                categoryNames: categoryNames
+            };
+        });
+        console.log(postsAndCategoryName)
+    }
+    getPostsWithCategoryName()
+
     return (
         <>
             <section className="card__container">
