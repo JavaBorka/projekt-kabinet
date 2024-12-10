@@ -1,10 +1,12 @@
 import "./paginated.style.css"
 import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
+import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 
-export const PaginatedList = ({items, itemsPerPage}) => {
+export const PaginatedList = ({itemsPerPage}) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [items, setItems] = useState([])
 
     const totalPages = Math.ceil(items.length / itemsPerPage);
 
@@ -48,14 +50,11 @@ export const PaginatedList = ({items, itemsPerPage}) => {
         return updatedPosts
     }
 
-    getPostsWithCategoryName().then((data) => {
-        console.log(data)
-    })
-
-    // fetchMyStuff().then(data => {
-    //     console.info('FETCH + AWAIT, ale tentoraz v ASYNC FUNKCII');
-    //     console.log(data)
-    // });
+    useEffect(() => {
+        getPostsWithCategoryName().then((data) => {
+            setItems(data)
+        })
+    }, [])
 
     return (
         <>
@@ -63,7 +62,7 @@ export const PaginatedList = ({items, itemsPerPage}) => {
                 {items
                     .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                     .map((item) => (
-                    <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.content} image={item.image}/>
+                    <CardPreview key={item.id} id={item.id} genre={item.categoryName} title={item.title.rendered} author={item.author} content={item.excerpt.rendered} image={item.image}/>
                 ))}
             </section>
 
