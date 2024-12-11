@@ -1,42 +1,53 @@
 import { useState } from "react"
 import "./article.style.css"
 import { useEffect } from "react"
+import { useLocation } from "react-router"
 
-export const CardFullArticle = ({title}) => {
+export const CardFullArticle = () => {
 
-    // todo: komponenta CardFullArticle přijme jenom komponentu ID, title načte pomocí fetch
-    const [mojeData, setMojeData] = useState({})
+    const [item, setItem] = useState({})
 
-    //todo: fetch(`https://www.casopiskabinet.sk/wp-json/wp/v2/posts/${id}`)
-    const getPromisePostId = (id) => {
+    const location = useLocation();
+    const { id } = location.state
 
-        return new Promise((resolve) => {
-            const postId = {
-                id: id,
-                date: "15. decembra 2024",
-                author: "Eva Pariláková",
-                title: {
-                rendered: "DOTÝKAŤ SA TRHLÍN"
-                },
-                content: "obsah"
-            }        
-            resolve(postId);
-        });
-    };
+    const getPostObject = async () => {
 
-    getPromisePostId(5).then((response) => setMojeData(response))
+        const reqPost = await fetch(`https://www.casopiskabinet.sk/wp-json/wp/v2/posts/${id}`)
+        const post = await reqPost.json()
+    
+        // todo: Keď odmažem z textu html tagy, tak sa mi vypne formátovanie. To nechcem. Chcem mať nastavené medzeri medzi odstavcami.
+        // GPTčko radí použiť dangerouslySetInnerHTML. Je to OK? Znie to creepy :)
+    
+        const stripHtmlTags = (html) => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            return doc.body.textContent || "";
+        };
+    
+        return {
+            title: post.title.rendered,
+            author: "Názov autora",
+            date: post.date,
+            content: stripHtmlTags(post.content.rendered)
+        }
+    }
+
+    useEffect(() => {
+        getPostObject().then((data) => {
+            setItem(data)
+        })
+    }, [])
 
     return (
         <main>
             <article className="article">
                 <header className="article__header">
-                    {/* bug: nechce načíst {mojeData.title.rendered} */}
-                    <h1 className="article__title">{title}</h1>
-                    <span className="article__author">{mojeData.author}</span>
-                    <span className="article__date">{mojeData.date}</span>
+                    <h1 className="article__title">{item.title}</h1>
+                    <span className="article__author">{item.author}</span>
+                    <span className="article__date">{item.date}</span>
                 </header>
 
-                <section className="article__content">{mojeData.content}</section>
+                <section className="article__content">{item.content}</section>
             </article>
         </main>
     )
