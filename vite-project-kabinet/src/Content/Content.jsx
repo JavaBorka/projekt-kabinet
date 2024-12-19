@@ -25,7 +25,7 @@ export const Content = ({articles}) => {
     <main>
     { viewportWidth < 600
       ? <LoadedList items={articles} itemsPerPage={4}/>
-      : <PaginatedList items={articles} itemsPerPage={6}/>
+      : <PaginatedList itemsPerPage={6}/>
     }
     </main>
   )
