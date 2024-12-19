@@ -3,10 +3,13 @@ import "./article.style.css"
 import { useEffect } from "react"
 import { useLocation } from "react-router"
 import { React } from "react"
+import { format } from "date-fns"
+import { cs } from "date-fns/locale"
 
 export const CardFullArticle = () => {
 
     const [item, setItem] = useState({})
+    const [myDate, setMyDate] = useState(null)
 
     const location = useLocation();
     const { id } = location.state
@@ -19,7 +22,7 @@ export const CardFullArticle = () => {
         return {
             title: post.title.rendered,
             author: "Názov autora",
-            date: post.date,
+            date: format(new Date(post.date), "dd. MM. yyyy", { locale: cs }),
             content: post.content.rendered
         }
     }
@@ -43,6 +46,7 @@ export const CardFullArticle = () => {
         
         return doc.body.innerHTML;
     };
+
 
     const cleanArticleContent = cleanHtmlContent(item.content)
 
