@@ -17,6 +17,7 @@ export const PaginatedList = ({itemsPerPage}) => {
         }
     };
 
+    // fetch(`https://casopiskabinet.sk/wp-json/wp/v2/posts?per_page=6&page=1`)
     useEffect(() => {
         getPostsWithCategoryName().then((data) => {
             setItems(data)

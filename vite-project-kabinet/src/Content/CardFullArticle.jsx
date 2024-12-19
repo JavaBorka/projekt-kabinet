@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./article.style.css"
 import { useEffect } from "react"
 import { useLocation } from "react-router"
+import { React } from "react"
 
 export const CardFullArticle = () => {
 
@@ -15,20 +16,11 @@ export const CardFullArticle = () => {
         const reqPost = await fetch(`https://www.casopiskabinet.sk/wp-json/wp/v2/posts/${id}`)
         const post = await reqPost.json()
     
-        // todo: Keď odmažem z textu html tagy, tak sa mi vypne formátovanie. To nechcem. Chcem mať nastavené medzeri medzi odstavcami.
-        // GPTčko radí použiť dangerouslySetInnerHTML. Je to OK? Znie to creepy :)
-    
-        const stripHtmlTags = (html) => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            return doc.body.textContent || "";
-        };
-    
         return {
             title: post.title.rendered,
             author: "Názov autora",
             date: post.date,
-            content: stripHtmlTags(post.content.rendered)
+            content: post.content.rendered
         }
     }
 
@@ -37,6 +29,22 @@ export const CardFullArticle = () => {
             setItem(data)
         })
     }, [])
+
+    // Content obsahuje špeciálne znaky, ktoré potrebujem odstrániť, ale zároveň chcem zachovať štýlovanie. Verím svojmu API, použijem atribút dangerouslySetInnerHtml.
+    const cleanHtmlContent = (html) => {
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+    
+        // Odstraňte nežádoucí atributy (např. styly)
+        doc.querySelectorAll("*").forEach((node) => {
+            node.removeAttribute("style");
+        });
+        
+        return doc.body.innerHTML;
+    };
+
+    const cleanArticleContent = cleanHtmlContent(item.content)
 
     return (
         <main>
@@ -47,7 +55,10 @@ export const CardFullArticle = () => {
                     <span className="article__date">{item.date}</span>
                 </header>
 
-                <section className="article__content">{item.content}</section>
+                <section
+                    className="article__content"
+                    dangerouslySetInnerHTML={{ __html: cleanArticleContent }}
+                />
             </article>
         </main>
     )
