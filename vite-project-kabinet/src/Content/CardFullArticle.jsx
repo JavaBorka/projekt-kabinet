@@ -9,7 +9,6 @@ import { cs } from "date-fns/locale"
 export const CardFullArticle = () => {
 
     const [item, setItem] = useState({})
-    const [myDate, setMyDate] = useState(null)
 
     const location = useLocation();
     const { id } = location.state
@@ -46,7 +45,6 @@ export const CardFullArticle = () => {
         
         return doc.body.innerHTML;
     };
-
 
     const cleanArticleContent = cleanHtmlContent(item.content)
 
