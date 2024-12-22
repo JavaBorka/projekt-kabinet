@@ -1,0 +1,38 @@
+[
+    {
+        "id": 4,
+        "name": "esej"
+    },
+    {
+        "id": 3,
+        "name": "kritika"
+    },
+    {
+        "id": 1,
+        "name": "Nezaradené"
+    },
+    {
+        "id": 11,
+        "name": "poézia"
+    },
+    {
+        "id": 10,
+        "name": "pohľad"
+    },
+    {
+        "id": 15,
+        "name": "próza"
+    },
+    {
+        "id": 13,
+        "name": "review"
+    },
+    {
+        "id": 14,
+        "name": "v rozhovore"
+    },
+    {
+        "id": 12,
+        "name": "z diára"
+    }
+]
