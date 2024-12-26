@@ -33,20 +33,36 @@ export const CardFullArticle = () => {
     }, [])
 
     // Content obsahuje špeciálne znaky, ktoré potrebujem odstrániť, ale zároveň chcem zachovať štýlovanie. Verím svojmu API, použijem atribút dangerouslySetInnerHtml.
-    const cleanHtmlContent = (html) => {
+    const addClassToImages = (html) => {
 
+        // odstránění speciálních znaků
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, "text/html");
+
+        // přidání třídy obrázkům
+        const images = doc.querySelectorAll('img')
+        images.forEach((img) => {
+            img.classList.add("article__img")
+
+            const width = img.getAttribute('width');
+            const height = img.getAttribute('height');
+
+            if (parseInt(height) > parseInt(width)) {
+                img.classList.add("article__img--tall")
+            } else {
+                img.classList.add("article__img--wide")
+            }
+        })
     
         // Odstraňte nežádoucí atributy (např. styly)
         doc.querySelectorAll("*").forEach((node) => {
-            node.removeAttribute("style");
-        });
+            node.removeAttribute("style")
+        })
         
         return doc.body.innerHTML;
     };
 
-    const cleanArticleContent = cleanHtmlContent(item.content)
+    const modifiedContent = addClassToImages(item.content)
 
     return (
         <main>
@@ -59,7 +75,7 @@ export const CardFullArticle = () => {
 
                 <section
                     className="article__content"
-                    dangerouslySetInnerHTML={{ __html: cleanArticleContent }}
+                    dangerouslySetInnerHTML={{ __html: modifiedContent }}
                 />
             </article>
         </main>

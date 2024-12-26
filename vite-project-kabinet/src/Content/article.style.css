@@ -1,5 +1,6 @@
 .article {
     margin: 10px 60px 60px 60px;
+    line-height: 1.8;
 }
 
 @media screen and (min-width: 600px) {
@@ -41,4 +42,30 @@
     font-weight: 600;
     color: #DC4345;
     text-transform: uppercase;
+}
+
+.article__content p:has(img) {
+    margin: 0;
+}
+
+.article__img {
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.article__img--tall {
+    width: 65%;
+}
+
+.article__img--wide {
+    width: 94%;
+}
+
+/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. Html značka popisku pak bude (asi) <caption> */
+.article__content caption {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 10px;
 }
