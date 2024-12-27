@@ -69,3 +69,5 @@
     font-style: italic;
     margin-bottom: 10px;
 }
+
+/* Pro zvýraznění textu nepoužívat bold, ale nastavit font-weight (jakékoliv hodnoty od 300 do 900) */
