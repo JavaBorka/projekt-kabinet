@@ -2,20 +2,22 @@ import "./paginated.style.css"
 import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
+import { BASE_API_URL } from "../constants/baseApiUrl.js"
 
 export const LoadedList = ({itemsPerPage}) => {
+
     const [items, setItems] = useState([])
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(itemsPerPage)
 
     const getPostsWithCategoryName = async (perPage) => {
 
-        const reqPosts = await fetch(`https://casopiskabinet.sk/wp-json/wp/v2/posts?per_page=${perPage}&page=1`)
+        const reqPosts = await fetch(`${BASE_API_URL}/posts?per_page=${perPage}&page=1`)
         const totalRecords = reqPosts.headers.get("X-WP-Total")
         setTotalRecords(totalRecords)
         const posts = await reqPosts.json()
     
-        const reqCategories = await fetch(`https://www.casopiskabinet.sk//wp-json/wp/v2/categories?_fields=id,name`)
+        const reqCategories = await fetch(`${BASE_API_URL}/categories?_fields=id,name`)
         const categories = await reqCategories.json()
     
         //chcem získať pole objektov, kde bude každý objekt obsahovať aj konkrétny názov kategórie
