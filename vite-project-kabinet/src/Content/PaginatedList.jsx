@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { BASE_API_URL } from "../constants/baseApiUrl.js";
+import { stripHTMLTags } from "../utils/stripHtmlTags.js";
 
 export const PaginatedList = ({itemsPerPage}) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -44,16 +45,10 @@ export const PaginatedList = ({itemsPerPage}) => {
             // todo: pridať žánre vo WP
             // todo: nastaviť WP tak, aby šlo pridávať fotky
             // todo: nastaviť WP tak, aby mal autor svoju vlastnú kolonku
-
-            const stripHtmlTags = (html) => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                return doc.body.textContent || "";
-            };
     
             return {
                 author: "Název autora",
-                perex: stripHtmlTags(post.excerpt.rendered),
+                perex: stripHTMLTags(post.excerpt.rendered),
                 id: post.id,
                 image: "",
                 title: post.title.rendered,

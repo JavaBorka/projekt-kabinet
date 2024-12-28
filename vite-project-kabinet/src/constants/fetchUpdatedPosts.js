@@ -1,4 +1,4 @@
-export const getPostsWithCategoryName = async () => {
+const getPostsWithCategoryName = async () => {
 
     const reqPosts = await fetch(`/assets/constants/posts.json`)
     const posts = await reqPosts.json()

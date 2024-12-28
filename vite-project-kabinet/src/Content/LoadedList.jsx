@@ -3,6 +3,7 @@ import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
 import { BASE_API_URL } from "../constants/baseApiUrl.js"
+import { stripHTMLTags } from "../utils/stripHtmlTags.js";
 
 export const LoadedList = ({itemsPerPage}) => {
 
@@ -38,16 +39,10 @@ export const LoadedList = ({itemsPerPage}) => {
             // todo: pridať žánre vo WP
             // todo: nastaviť WP tak, aby šlo pridávať fotky
             // todo: nastaviť WP tak, aby mal autor svoju vlastnú kolonku
-
-            const stripHtmlTags = (html) => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                return doc.body.textContent || "";
-            };
     
             return {
                 author: "Název autora",
-                perex: stripHtmlTags(post.excerpt.rendered),
+                perex: stripHTMLTags(post.excerpt.rendered),
                 id: post.id,
                 image: "",
                 title: post.title.rendered,
