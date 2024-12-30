@@ -1,9 +1,11 @@
-const getPostsWithCategoryName = async () => {
+export const getPostsPreviewWithCategoryName = async (perPage, page, setTotalPages, BASE_API_URL, stripHTMLTags ) => {
 
-    const reqPosts = await fetch(`/assets/constants/posts.json`)
+    const reqPosts = await fetch(`${BASE_API_URL}/posts?per_page=${perPage}&page=${page}`)
+    const totalPages = reqPosts.headers.get("X-WP-TotalPages");
+    setTotalPages(totalPages)
     const posts = await reqPosts.json()
 
-    const reqCategories = await fetch(`/assets/constants/categories.json`)
+    const reqCategories = await fetch(`${BASE_API_URL}/categories?_fields=id,name`)
     const categories = await reqCategories.json()
 
     //chcem získať pole objektov, kde bude každý objekt obsahovať aj konkrétny názov kategórie
@@ -19,16 +21,17 @@ const getPostsWithCategoryName = async () => {
         // Kabinet má aktuálne pár článkov takých, kde sú pridelené 2 kategórie
 
         // todo: Dá sa nastaviť WP tak, aby uživateľ mohol zakliknúť vždy len jednu kategóriu ?
+        // Nedá. Muselo by se vytvořit nové pole, které by fungovalo stejně jen s tímhle omezením. Znamenalo by to, že by se musely upravit hodnoty pro všechny články.
+
         // todo: pridať žánre vo WP
         // todo: nastaviť WP tak, aby šlo pridávať fotky
         // todo: nastaviť WP tak, aby mal autor svoju vlastnú kolonku
 
         return {
-            author: post.author,
-            date: post.date,
-            perex: post.excerpt.rendered,
+            author: "Název autora",
+            perex: stripHTMLTags(post.excerpt.rendered),
             id: post.id,
-            image: post.image,
+            image: "",
             title: post.title.rendered,
             genre: newPostCategsArray.join(),                
         }
