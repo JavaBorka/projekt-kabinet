@@ -1,4 +1,7 @@
-export const getPostsPreviewWithCategoryName = async (perPage, page, setTotalPages, BASE_API_URL, stripHTMLTags ) => {
+import { BASE_API_URL } from "../constants/baseApiUrl.js";
+import { stripHTMLTags } from "../utils/stripHtmlTags.js";
+
+export const getPostsPreviewWithCategoryName = async (perPage, page, setTotalPages) => {
 
     const reqPosts = await fetch(`${BASE_API_URL}/posts?per_page=${perPage}&page=${page}`)
     const totalPages = reqPosts.headers.get("X-WP-TotalPages");

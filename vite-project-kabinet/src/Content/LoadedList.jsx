@@ -2,8 +2,6 @@ import "./paginated.style.css"
 import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
-import { BASE_API_URL } from "../constants/baseApiUrl.js"
-import { stripHTMLTags } from "../utils/stripHtmlTags.js";
 import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreviewMobile.js";
 
 export const LoadedList = ({itemsPerPage}) => {
@@ -12,10 +10,10 @@ export const LoadedList = ({itemsPerPage}) => {
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(itemsPerPage)
 
-    getPostsPreviewWithCategoryName(visibleCount, setTotalRecords, BASE_API_URL, stripHTMLTags)
+    getPostsPreviewWithCategoryName(visibleCount, setTotalRecords)
 
     useEffect(() => {
-        getPostsPreviewWithCategoryName(visibleCount, setTotalRecords, BASE_API_URL, stripHTMLTags).then((data) => {
+        getPostsPreviewWithCategoryName(visibleCount, setTotalRecords).then((data) => {
             setItems(data)
         })
     }, [visibleCount])
