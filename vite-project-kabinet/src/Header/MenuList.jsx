@@ -1,10 +1,14 @@
+import { Link } from 'react-router'
+import { ROUTE_ESSAYS } from "../constants/routes.js"
 
 export const MenuList = () => {
 
     return (
         <ul className="menu__list">
             <li className="menu__eseje">
-                <a className="menu__link menu__link--eseje" href="#eseje">eseje</a>
+                <Link className="menu__link menu__link--eseje" to={`/${ROUTE_ESSAYS}`}>
+                    eseje
+                </Link>
             </li>
             <li className="menu__texty">
                 <a className="menu__link menu__link--texty" href="#texty">texty</a>

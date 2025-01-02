@@ -6,12 +6,10 @@ import { useState } from "react"
 import { MenuList } from "../Header/MenuList.jsx"
 import "./article.style.css"
  
-export const CardDetail = () => {
+export const CardDetailPage = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
-    // todo: title se bude načítat z databáze
     const location = useLocation()
-    const originalTitle = location.state?.originalTitle;
 
     return (
         <div className={`app_container ${menuOpen && "menu_open"}`}>
@@ -20,7 +18,8 @@ export const CardDetail = () => {
 
                 {menuOpen && <section className="menu"><MenuList/></section>}
 
-                <CardFullArticle title={originalTitle}/>
+                <CardFullArticle/>
+                
                 <Footer/>
             </div>
         </div>
