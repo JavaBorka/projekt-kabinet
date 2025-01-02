@@ -3,12 +3,13 @@ import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
 import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreviewMobile.js";
+import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPageMob.js";
 
-export const LoadedList = ({itemsPerPage}) => {
+export const LoadedList = () => {
 
     const [items, setItems] = useState([])
     const [totalRecords, setTotalRecords] = useState(0)
-    const [visibleCount, setVisibleCount] = useState(itemsPerPage)
+    const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE_MOB)
 
     getPostsPreviewWithCategoryName(visibleCount, setTotalRecords)
 
@@ -33,7 +34,7 @@ export const LoadedList = ({itemsPerPage}) => {
                     <button 
                         className="btn btn-mob"
                         onClick={() => {
-                            setVisibleCount(prev => prev + itemsPerPage)
+                            setVisibleCount(prev => prev + ITEMS_PER_PAGE_MOB)
                         }}
                     >
                         Ďalšie články

@@ -3,11 +3,10 @@ import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
-import { BASE_API_URL } from "../constants/baseApiUrl.js";
-import { stripHTMLTags } from "../utils/stripHtmlTags.js";
 import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreview.js";
+import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.js";
 
-export const PaginatedList = ({itemsPerPage}) => {
+export const PaginatedList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0)
     const [items, setItems] = useState([])
@@ -18,10 +17,10 @@ export const PaginatedList = ({itemsPerPage}) => {
         }
     };
 
-    getPostsPreviewWithCategoryName(itemsPerPage, currentPage, setTotalPages)
+    getPostsPreviewWithCategoryName(ITEMS_PER_PAGE, currentPage, setTotalPages)
 
     useEffect(() => {
-        getPostsPreviewWithCategoryName(itemsPerPage, currentPage, setTotalPages).then((data) => {
+        getPostsPreviewWithCategoryName(ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
             setItems(data)
         })
     }, [currentPage])
