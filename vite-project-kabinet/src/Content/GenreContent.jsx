@@ -1,11 +1,10 @@
 import "./content.style.css"
-import { PaginatedList } from "./PaginatedList.jsx"
-import { LoadedList } from "./LoadedList.jsx"
+import { GenrePaginatedList } from "./GenrePaginatedList.jsx"
+import { GenreLoadedList } from "./GenreLoadedList.jsx"
 import { useState, useEffect } from "react"
 import { setViewport } from "../utils/setViewport.js"
 
-export const HomepageContent = () => {
-
+export const GenreContent = ({genre}) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -15,8 +14,8 @@ export const HomepageContent = () => {
   return (
     <main>
     { viewportWidth < 600
-      ? <LoadedList itemsPerPage={4}/>
-      : <PaginatedList itemsPerPage={9}/>
+      ? <GenreLoadedList/>
+      : <GenrePaginatedList genre={genre}/>
     }
     </main>
   )

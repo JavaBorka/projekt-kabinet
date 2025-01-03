@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreviewMobile.js";
 import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPageMob.js";
 
-// todo: Prozatím funkce EsejeLoadedList = Loaded List. Je potřeba upravit funkci tak, aby vracela jenom eseje.
-export const EsejeLoadedList = () => {
+// todo: Prozatím funkce GenreLoadedList = Loaded List. Je potřeba upravit funkci tak, aby vracela jenom eseje.
+export const GenreLoadedList = () => {
 
     const [items, setItems] = useState([])
     const [totalRecords, setTotalRecords] = useState(0)

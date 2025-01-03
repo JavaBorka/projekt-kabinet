@@ -1,20 +1,29 @@
 import { BASE_API_URL } from "../constants/baseApiUrl.js";
 import { stripHTMLTags } from "../utils/stripHtmlTags.js";
 
-export const getPostsPreviewWithCategoryName = async (perPage, page, setTotalPages) => {
+// Argument funkce genre odpovída žánru ve WP. Argument perPage je maximální počet článků, které WP dokáže generovat na 1 stránku (100)
+export const getPostsPreviewWithCategoryNameGenre = async (perPage, genre) => {
 
-    const reqPosts = await fetch(`${BASE_API_URL}/posts?per_page=${perPage}&page=${page}`)
-    // Je potřeba převést na celé číslo v desítkové soustavě
-    const totalPages = parseInt(reqPosts.headers.get("X-WP-TotalPages"), 10)
-    setTotalPages(totalPages)
-    const posts = await reqPosts.json()
+    const allPosts = []
+
+    const reqFirstPagePosts = await fetch(`${BASE_API_URL}/posts?per_page=${perPage}&page=1`)
+    const totalPages = parseInt(reqFirstPagePosts.headers.get("X-WP-TotalPages"), 10)
+    const firstPagePosts = await reqFirstPagePosts.json()
+
+    allPosts.push(...firstPagePosts)
+
+    for (let page = 2; page <= totalPages; page++) {
+        const reqOtherPagesPosts = await fetch(`${BASE_API_URL}/posts?per_page=${perPage}&page=${page}`)
+        const otherPagesPosts = await reqOtherPagesPosts.json()
+        allPosts.push(...otherPagesPosts)
+    }
 
     const reqCategories = await fetch(`${BASE_API_URL}/categories?_fields=id,name`)
     const categories = await reqCategories.json()
 
     //chcem získať pole objektov, kde bude každý objekt obsahovať aj konkrétny názov kategórie
     
-    const updatedPosts = posts.map((post) => {
+    const updatedPosts = allPosts.map((post) => {
         const postCategsArray = post.categories
         const newPostCategsArray = postCategsArray.map((catID) => {
             const categObject = categories.find((category) => category.id === catID )
@@ -41,5 +50,5 @@ export const getPostsPreviewWithCategoryName = async (perPage, page, setTotalPag
         }
     })
 
-    return updatedPosts
+    return updatedPosts.filter((post) => post.genre === genre )
 }
