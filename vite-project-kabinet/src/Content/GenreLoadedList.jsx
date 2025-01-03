@@ -2,28 +2,29 @@ import "./paginated.style.css"
 import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
-import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreviewMobile.js";
+import { getPostsPreviewWithCategoryNameGenre } from "../constants/getPostsPreviewGenre.js";
 import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPageMob.js";
+import { WP_API_ITEMS_PER_PAGE } from "../constants/itemsPerPage.js";
 
-// todo: Prozatím funkce GenreLoadedList = Loaded List. Je potřeba upravit funkci tak, aby vracela jenom eseje.
-export const GenreLoadedList = () => {
+export const GenreLoadedList = ({genre}) => {
 
     const [items, setItems] = useState([])
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE_MOB)
 
-    getPostsPreviewWithCategoryName(visibleCount, setTotalRecords)
-
+    getPostsPreviewWithCategoryNameGenre(WP_API_ITEMS_PER_PAGE, genre)
     useEffect(() => {
-        getPostsPreviewWithCategoryName(visibleCount, setTotalRecords).then((data) => {
+        getPostsPreviewWithCategoryNameGenre(WP_API_ITEMS_PER_PAGE, genre).then((data) => {
             setItems(data)
+            setTotalRecords(data.length)
         })
-    }, [visibleCount])
+    }, [])
 
     return (
         <>
             <section className="card__container">
                 {items
+                    .slice(0, visibleCount)
                     .map((item) => (
                     <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
 

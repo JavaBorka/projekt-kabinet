@@ -14,7 +14,7 @@ export const GenreContent = ({genre}) => {
   return (
     <main>
     { viewportWidth < 600
-      ? <GenreLoadedList/>
+      ? <GenreLoadedList genre={genre}/>
       : <GenrePaginatedList genre={genre}/>
     }
     </main>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.js";
+import { WP_API_ITEMS_PER_PAGE } from "../constants/itemsPerPage.js";
 import { getPostsPreviewWithCategoryNameGenre } from "../constants/getPostsPreviewGenre.js";
 
 export const GenrePaginatedList = ({genre}) => {
@@ -17,15 +18,15 @@ export const GenrePaginatedList = ({genre}) => {
         }
     };
 
-    getPostsPreviewWithCategoryNameGenre(100, genre)
+    getPostsPreviewWithCategoryNameGenre(WP_API_ITEMS_PER_PAGE, genre)
 
     useEffect(() => {
-        getPostsPreviewWithCategoryNameGenre(100, genre).then((data) => {
+        getPostsPreviewWithCategoryNameGenre(WP_API_ITEMS_PER_PAGE, genre).then((data) => {
             setItems(data)
             const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE)
             setTotalPages(totalPages)
         })
-    }, [currentPage])
+    }, [])
 
     return (
         <>
