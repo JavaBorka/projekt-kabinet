@@ -1,5 +1,6 @@
 import { BASE_API_URL } from "../constants/baseApiUrl.js";
 import { stripHTMLTags } from "../utils/stripHtmlTags.js";
+import { WP_ESSAY } from "./genres.js";
 
 // Argument funkce genre odpovída žánru ve WP. Argument perPage je maximální počet článků, které WP dokáže generovat na 1 stránku (100)
 export const getPostsPreviewWithCategoryNameGenre = async (perPage, genre) => {
@@ -49,6 +50,12 @@ export const getPostsPreviewWithCategoryNameGenre = async (perPage, genre) => {
             genre: newPostCategsArray.join(),                
         }
     })
-
-    return updatedPosts.filter((post) => post.genre === genre )
+    
+    // Po kliknutí na texty se načtou všechny náhledy článků, kterých kategorie není esej ("texty" nejsou kategorií wordpressu)
+    if (genre === "texty") {
+        return updatedPosts.filter((post) => post.genre !== WP_ESSAY)
+    }
+    else {
+        return updatedPosts.filter((post) => post.genre === genre)
+    }
 }

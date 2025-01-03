@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { ROUTE_ESSAYS } from "../constants/routes.js"
+import { ROUTE_TEXTS } from '../constants/routes.js'
 
 export const MenuList = () => {
 
@@ -11,7 +12,9 @@ export const MenuList = () => {
                 </Link>
             </li>
             <li className="menu__texty">
-                <a className="menu__link menu__link--texty" href="#texty">texty</a>
+                <Link className="menu__link menu__link--texty" to={`/${ROUTE_TEXTS}`}>
+                    texty
+                </Link>
                 <ul className="menu__dropdown">
                     <li>
                         <a className="menu__link menu__link--dropdown" href="#proza">próza</a>

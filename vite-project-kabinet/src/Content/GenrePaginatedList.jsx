@@ -8,6 +8,7 @@ import { WP_API_ITEMS_PER_PAGE } from "../constants/itemsPerPage.js";
 import { getPostsPreviewWithCategoryNameGenre } from "../constants/getPostsPreviewGenre.js";
 
 export const GenrePaginatedList = ({genre}) => {
+    
     const [currentPage, setCurrentPage] = useState(1);
     const [items, setItems] = useState([])
     const [totalPages, setTotalPages] = useState(0)
