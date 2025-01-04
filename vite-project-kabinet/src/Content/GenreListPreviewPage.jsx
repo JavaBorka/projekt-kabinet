@@ -4,9 +4,8 @@ import { useState } from "react"
 import { MenuList } from "../Header/MenuList.jsx"
 import "./article.style.css"
 import { GenreContent } from "./GenreContent.jsx"
-import { WP_ESSAY } from "../constants/genres.js"
 
-export const EssayListPreviewPage = () => {
+export const GenreListPreviewPage = ({genre}) => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
@@ -16,7 +15,7 @@ export const EssayListPreviewPage = () => {
 
                 {menuOpen && <section className="menu"><MenuList/></section>}
 
-                <GenreContent genre={WP_ESSAY}/>
+                <GenreContent genre={genre}/>
             
                 <Footer/>
             </div>

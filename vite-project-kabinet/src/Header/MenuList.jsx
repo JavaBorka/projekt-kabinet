@@ -1,6 +1,5 @@
 import { Link } from 'react-router'
-import { ROUTE_ESSAYS } from "../constants/routes.js"
-import { ROUTE_TEXTS } from '../constants/routes.js'
+import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW } from '../constants/routes.js'
 
 export const MenuList = () => {
 
@@ -17,19 +16,29 @@ export const MenuList = () => {
                 </Link>
                 <ul className="menu__dropdown">
                     <li>
-                        <a className="menu__link menu__link--dropdown" href="#proza">próza</a>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_PROSE}`}>
+                            próza
+                        </Link>
                     </li>
                     <li>
-                        <a className="menu__link menu__link--dropdown" href="#basne">básne</a>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_POEM}`}>
+                            básne
+                        </Link>
                     </li>
                     <li>
-                        <a className="menu__link menu__link--dropdown" href="#zdiara">z diára</a>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_DIARY}`}>
+                            z diára
+                        </Link>
                     </li>
                     <li>
-                        <a className="menu__link menu__link--dropdown" href="#rozhovor">rozhovor</a>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_INTERVIEW}`}>
+                            rozhovor
+                        </Link>
                     </li>
                     <li>
-                        <a className="menu__link menu__link--dropdown" href="#review">review</a>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_REVIEW}`}>
+                            review
+                        </Link>
                     </li>
                 </ul>
             </li>
