@@ -5,7 +5,7 @@ import { MenuList } from "../Header/MenuList.jsx"
 import "./article.style.css"
 import { GenreContent } from "./GenreContent.jsx"
 
-export const GenreListPreviewPage = ({genre}) => {
+export const GenreListPreviewPage = ({catId}) => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
@@ -15,7 +15,7 @@ export const GenreListPreviewPage = ({genre}) => {
 
                 {menuOpen && <section className="menu"><MenuList/></section>}
 
-                <GenreContent genre={genre}/>
+                <GenreContent catId={catId}/>
             
                 <Footer/>
             </div>

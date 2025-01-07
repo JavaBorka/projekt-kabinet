@@ -1,4 +1,4 @@
-import { BASE_API_URL } from "../constants/baseApiUrl.js";
+import { BASE_API_URL } from "./WPbaseAPI.constants.js";
 import { stripHTMLTags } from "../utils/stripHtmlTags.js";
 
 export const getPostsPreviewWithCategoryName = async (perPage, page, setTotalPages) => {

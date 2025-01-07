@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW } from '../constants/routes.js'
+import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW } from '../constants/routes.constants.js'
 
 export const MenuList = () => {
 

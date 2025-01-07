@@ -1,8 +1,8 @@
 import { Image } from "./Image.jsx"
 import { CardPreface } from "./CardPreface.jsx"
 import { Link, Route } from 'react-router'
-import { ROUTE_ESSAYS } from "../constants/routes.js"
-import { ROUTE_TEXTS } from "../constants/routes.js"
+import { ROUTE_ESSAYS } from "../constants/routes.constants.js"
+import { ROUTE_TEXTS } from "../constants/routes.constants.js"
 import "./card.style.css"
 
 export const CardPreview = ({id, genre, title, author, content, image}) => {

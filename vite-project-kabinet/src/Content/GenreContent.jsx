@@ -4,7 +4,7 @@ import { GenreLoadedList } from "./GenreLoadedList.jsx"
 import { useState, useEffect } from "react"
 import { setViewport } from "../utils/setViewport.js"
 
-export const GenreContent = ({genre}) => {
+export const GenreContent = ({catId}) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -14,8 +14,8 @@ export const GenreContent = ({genre}) => {
   return (
     <main>
     { viewportWidth < 600
-      ? <GenreLoadedList genre={genre}/>
-      : <GenrePaginatedList genre={genre}/>
+      ? <GenreLoadedList catId={catId}/>
+      : <GenrePaginatedList catId={catId}/>
     }
     </main>
   )

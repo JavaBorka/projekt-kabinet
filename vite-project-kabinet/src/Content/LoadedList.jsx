@@ -3,7 +3,7 @@ import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
 import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreviewMobile.js";
-import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPageMob.js";
+import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPage.constants.js";
 
 export const LoadedList = () => {
 

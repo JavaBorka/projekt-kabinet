@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreview.js";
-import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.js";
+import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
 
 export const PaginatedList = () => {
     const [currentPage, setCurrentPage] = useState(1);
