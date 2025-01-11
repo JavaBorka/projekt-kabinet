@@ -2,7 +2,7 @@ import "./paginated.style.css"
 import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
-import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreviewMobile.js";
+import { getPostsPreviewMob } from "../constants/getPostsPreviewMob.js";
 import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPage.constants.js";
 
 export const LoadedList = () => {
@@ -11,10 +11,10 @@ export const LoadedList = () => {
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE_MOB)
 
-    getPostsPreviewWithCategoryName(visibleCount, setTotalRecords)
+    getPostsPreviewMob(visibleCount, setTotalRecords)
 
     useEffect(() => {
-        getPostsPreviewWithCategoryName(visibleCount, setTotalRecords).then((data) => {
+        getPostsPreviewMob(visibleCount, setTotalRecords).then((data) => {
             setItems(data)
         })
     }, [visibleCount])

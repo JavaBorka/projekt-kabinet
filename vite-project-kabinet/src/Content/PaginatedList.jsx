@@ -3,7 +3,7 @@ import { CardPreview } from "./CardPreview.jsx"
 import { useState } from "react";
 import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
-import { getPostsPreviewWithCategoryName } from "../constants/getPostsPreview.js";
+import { getPostsPreview } from "../constants/getPostsPreview.js";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
 
 export const PaginatedList = () => {
@@ -17,10 +17,10 @@ export const PaginatedList = () => {
         }
     };
 
-    getPostsPreviewWithCategoryName(ITEMS_PER_PAGE, currentPage, setTotalPages)
+    getPostsPreview(ITEMS_PER_PAGE, currentPage, setTotalPages)
 
     useEffect(() => {
-        getPostsPreviewWithCategoryName(ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
+        getPostsPreview(ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
             setItems(data)
         })
     }, [currentPage])
