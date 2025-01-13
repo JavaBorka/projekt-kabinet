@@ -10,7 +10,7 @@ export const CardDetailPage = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     const location = useLocation()
-
+    
     return (
         <div className={`app_container ${menuOpen && "menu_open"}`}>
             <div className="page__container">
@@ -19,7 +19,7 @@ export const CardDetailPage = () => {
                 {menuOpen && <section className="menu"><MenuList/></section>}
 
                 <CardFullArticle/>
-                
+
                 <Footer/>
             </div>
         </div>
