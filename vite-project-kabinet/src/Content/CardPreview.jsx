@@ -7,7 +7,7 @@ import { createSlug } from "../utils/createSlug.js"
 import "./card.style.css"
 
 
-export const CardPreview = ({id, genre, title, author, content, image, catId}) => {
+export const CardPreview = ({id, genre, title, author, content, image}) => {
 
     const cardClassName = () => {
         const classes = ["card"]
@@ -27,12 +27,18 @@ export const CardPreview = ({id, genre, title, author, content, image, catId}) =
     }
 
     const createRoute = (title, genre, id) => {
-        return (`/${genre === "esej" ? ROUTE_ESSAYS : (`${ROUTE_TEXTS}/${createSlug(genre)}`)}/${id}-${createSlug(title)}`)
+
+        if (genre === "esej") {
+            return (`/${ROUTE_ESSAYS}/${id}/${createSlug(title)}`)
+        }
+        else {
+            return (`/${ROUTE_TEXTS}/${createSlug(genre)}/${id}/${createSlug(title)}`)
+        }
     }
 
     return (
             <div className={cardClassName()}>
-                <Link to = {createRoute(title, genre, id)} state={{id: id}} className="card__link">
+                <Link to = {createRoute(title, genre, id)} className="card__link">
                     <h1 className="card__name">{title}</h1>
                     <p className="card__author">{author}</p>
                     { image && <Image image={image} content={content}/> }

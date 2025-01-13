@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./article.style.css"
 import { useEffect } from "react"
-import { useLocation } from "react-router"
+import { useParams } from "react-router"
 import { React } from "react"
 import { format } from "date-fns"
 import { cs } from "date-fns/locale"
@@ -10,8 +10,7 @@ export const CardFullArticle = () => {
 
     const [item, setItem] = useState({})
 
-    const location = useLocation();
-    const { id } = location.state
+    const { id } = useParams()
 
     const getPostObject = async () => {
 

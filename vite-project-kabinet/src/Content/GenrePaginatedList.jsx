@@ -31,7 +31,7 @@ export const GenrePaginatedList = ({catId}) => {
             <section className="card__container">
                 {items
                     .map((item) => (
-                    <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image} catId={catId}/>
+                    <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
                 ))}
             </section>
 
