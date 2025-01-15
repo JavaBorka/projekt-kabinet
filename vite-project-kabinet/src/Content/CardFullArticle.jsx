@@ -10,7 +10,9 @@ export const CardFullArticle = () => {
 
     const [item, setItem] = useState({})
 
-    const { id } = useParams()
+    const { title } = useParams()
+
+    const id = title.split("-")[0]
 
     const getPostObject = async () => {
 

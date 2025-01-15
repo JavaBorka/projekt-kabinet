@@ -1,4 +1,5 @@
 import { stripHTMLTags } from "../utils/stripHtmlTags"
+import { getImage } from "./getImage"
 
 export const getPostsWithGenreName = (posts, categories) => {
 
@@ -10,14 +11,21 @@ export const getPostsWithGenreName = (posts, categories) => {
         })
 
         return {
-            author: "Název autora",
+            author: post.acf.autor ? post.acf.autor : "Autor XY",
             perex: stripHTMLTags(post.excerpt.rendered),
             id: post.id,
-            image: "",
+            image: getImage(post),
             title: post.title.rendered,
-            genre: newPostCategsArray.join(),                
+            genre: newPostCategsArray.join(),
         }
     })
 
     return updatedPosts
 }
+
+// images na vyzkoušení
+// https://www.casopiskabinet.sk/wp-content/uploads/2024/12/gkg-13-300x300.jpg
+// https://www.casopiskabinet.sk/wp-content/uploads/2024/12/Alexander-Eckerdt-Dvor-1961-212x300.jpg
+// https://www.casopiskabinet.sk/2024/11/dotykat-sa-trhlin/8-nadoba-iv-oil-on-canvas-120x150-cm-2024-op-tien.jpg
+// https://www.casopiskabinet.sk/wp-content/uploads/2024/04/katolík-201x300.jpg
+// https://www.casopiskabinet.sk/wp-content/uploads/2022/11/Na-balkone-1963-219x300.jpg

@@ -23,8 +23,8 @@ ReactDOM.createRoot(root).render(
       <Route path={`/${ROUTE_ESSAYS}`} element={<GenreListPreviewPage key={ROUTE_ESSAYS}/>}/>
       <Route path={`/${ROUTE_TEXTS}`} element={<GenreListPreviewPage key={ROUTE_TEXTS}/>}/>
       <Route path={`/${ROUTE_TEXTS}/:genre`} element={<GenreListPreviewWrapper/>}/>
-      <Route path={`/${ROUTE_ESSAYS}/:id/:title`} element={<CardDetailPage/>}/>
-      <Route path={`/${ROUTE_TEXTS}/:genre/:id/:title`}  element={<CardDetailPage/>}/>
+      <Route path={`/${ROUTE_ESSAYS}/:title`} element={<CardDetailPage/>}/>
+      <Route path={`/${ROUTE_TEXTS}/:genre/:title`}  element={<CardDetailPage/>}/>
     </Routes>
   </BrowserRouter>
 )
