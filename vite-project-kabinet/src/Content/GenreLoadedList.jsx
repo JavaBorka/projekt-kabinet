@@ -11,8 +11,6 @@ export const GenreLoadedList = ({catId}) => {
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE_MOB)
 
-    getPostsPreviewGenreMob(catId, visibleCount, setTotalRecords)
-
     useEffect(() => {
         getPostsPreviewGenreMob(catId, visibleCount, setTotalRecords).then((data) => {
             setItems(data)

@@ -18,8 +18,6 @@ export const GenrePaginatedList = ({catId}) => {
         }
     };
 
-    getPostsPreviewGenre(catId, ITEMS_PER_PAGE, currentPage, setTotalPages)
-
     useEffect(() => {
         getPostsPreviewGenre(catId, ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
             setItems(data)
