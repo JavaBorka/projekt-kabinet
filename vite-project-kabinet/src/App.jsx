@@ -96,7 +96,7 @@ export const App = () => {
 
       {menuOpen && <section className="menu"><MenuList/></section>}
 
-      <Content articles={data}/>
+      <Content/>
       <Footer/>
     </div>
   )
