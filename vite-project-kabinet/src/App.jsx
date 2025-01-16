@@ -1,5 +1,5 @@
 import { Header } from "./Header"
-import { Content } from "./Content"
+import { HomepageContent } from "./Content/HomepageContent.jsx"
 import { Footer } from  "./Footer/Footer.jsx"
 import { MenuList } from "./Header/MenuList.jsx"
 import { useState } from "react"
@@ -96,7 +96,7 @@ export const App = () => {
 
       {menuOpen && <section className="menu"><MenuList/></section>}
 
-      <Content/>
+      <HomepageContent/>
       <Footer/>
     </div>
   )

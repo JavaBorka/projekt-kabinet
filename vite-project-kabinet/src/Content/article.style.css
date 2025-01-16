@@ -15,10 +15,10 @@
     }
 }
 
-.article p {
+/* .article p {
     border: 1px solid transparent;
     margin-bottom: 30px;
-}
+} */
 
 .article__header {
     font-family: Urbanist;
@@ -63,11 +63,14 @@
     width: 94%;
 }
 
-/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. Html značka popisku pak bude (asi) <caption> */
-.article__content caption {
+.article__content p {
+    text-align: left;
+}
+
+/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. */
+.article__content figcaption {
     text-align: center;
-    font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 35px;
 }
 
 /* Pro zvýraznění textu nepoužívat bold, ale nastavit font-weight (jakékoliv hodnoty od 300 do 900) */

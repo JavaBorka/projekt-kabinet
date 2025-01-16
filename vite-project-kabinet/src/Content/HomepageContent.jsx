@@ -2,23 +2,14 @@ import "./content.style.css"
 import { PaginatedList } from "./PaginatedList.jsx"
 import { LoadedList } from "./LoadedList.jsx"
 import { useState, useEffect } from "react"
+import { setViewport } from "../utils/setViewport.js"
 
-
-export const Content = () => {
+export const HomepageContent = () => {
 
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
 
   useEffect(() => {
-
-    const handleResize = () => {
-      setViewportWidth(window.innerWidth)
-    }
-
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-
+    setViewport(setViewportWidth)
   }, [])
 
   return (
