@@ -17,11 +17,6 @@ export const MenuList = () => {
                 </Link>
                 <ul className="menu__dropdown">
                     <li>
-                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_PROSE}`} state={{catId: WP_CAT_ID_PROSE}}>
-                            próza
-                        </Link>
-                    </li>
-                    <li>
                         <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_POEM}`} state={{catId: WP_CAT_ID_POEM}}>
                             básne
                         </Link>
@@ -39,6 +34,11 @@ export const MenuList = () => {
                     <li>
                         <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_REVIEW}`} state={{catId: WP_CAT_ID_REVIEW}}>
                             review
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_PROSE}`} state={{catId: WP_CAT_ID_PROSE}}>
+                            próza
                         </Link>
                     </li>
                 </ul>

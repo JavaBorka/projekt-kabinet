@@ -21,7 +21,7 @@ export const CardFullArticle = () => {
     
         return {
             title: post.title.rendered,
-            author: "Názov autora",
+            author: post.acf.autor ? post.acf.autor : "Autor XY",
             date: format(new Date(post.date), "dd. MM. yyyy", { locale: cs }),
             content: post.content.rendered
         }

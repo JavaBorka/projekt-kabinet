@@ -11,8 +11,6 @@ export const LoadedList = () => {
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE_MOB)
 
-    getPostsPreviewMob(visibleCount, setTotalRecords)
-
     useEffect(() => {
         getPostsPreviewMob(visibleCount, setTotalRecords).then((data) => {
             setItems(data)

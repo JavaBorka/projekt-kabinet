@@ -39,7 +39,7 @@
 .article__author {
     font-family: Urbanist;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 450;
     color: #DC4345;
     text-transform: uppercase;
 }
@@ -52,7 +52,16 @@
     height: auto;
     object-fit: cover;
     display: block;
-    margin: 0 auto 10px auto;
+    margin-bottom: 10px
+}
+
+/* Wordpress obaluje některé obrázky tagem <figure> s třídou .wp-caption */
+.wp-caption {
+    all: unset; /* Zruší veškeré předchozí stylování */
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
 }
 
 .article__img--tall {
@@ -60,17 +69,28 @@
 }
 
 .article__img--wide {
-    width: 94%;
+    width: 90%;
+}
+
+.article__content blockquote p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 470;
+    margin: 30px;
 }
 
 .article__content p {
     text-align: left;
+    margin: 30px 0;
+}
+
+.article__content p strong,
+.article__content p b {
+    font-weight: 470
 }
 
 /* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. */
 .article__content figcaption {
-    text-align: center;
+    text-align: left;
     margin-bottom: 35px;
 }
-
-/* Pro zvýraznění textu nepoužívat bold, ale nastavit font-weight (jakékoliv hodnoty od 300 do 900) */
