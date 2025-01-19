@@ -55,7 +55,7 @@
     margin-bottom: 10px
 }
 
-/* Wordpress obaluje některé obrázky tagem <figure> s třídou .wp-caption */
+/* Wordpress obaluje obrázky s popiskem tagem <figure> s třídou .wp-caption */
 .wp-caption {
     all: unset; /* Zruší veškeré předchozí stylování */
     margin: 0;
@@ -64,12 +64,19 @@
     display: block;
 }
 
+/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. */
+.article__content figcaption {
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+
 .article__img--tall {
     width: 65%;
 }
 
 .article__img--wide {
-    width: 90%;
+    width: 85%;
 }
 
 .article__content blockquote p {
@@ -89,8 +96,9 @@
     font-weight: 470
 }
 
-/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. */
-.article__content figcaption {
-    text-align: left;
-    margin-bottom: 35px;
+.article__content a {
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+    color: inherit;
 }

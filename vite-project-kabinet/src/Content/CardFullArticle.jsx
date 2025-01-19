@@ -43,15 +43,22 @@ export const CardFullArticle = () => {
         // přidání třídy obrázkům
         const images = doc.querySelectorAll('img')
         images.forEach((img) => {
+
             img.classList.add("article__img")
 
             const width = img.getAttribute('width');
             const height = img.getAttribute('height');
 
+            // Popisek obrázku musí mít stejnou šířku odstavce jako má obrázek
+            const figCaption = img.nextElementSibling
+
             if (parseInt(height) > parseInt(width)) {
                 img.classList.add("article__img--tall")
+                figCaption && figCaption.classList.add("article__img--tall")
+
             } else {
                 img.classList.add("article__img--wide")
+                figCaption && figCaption.classList.add("article__img--wide")
             }
         })
     
