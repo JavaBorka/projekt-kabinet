@@ -8,7 +8,7 @@ import { useLocation } from "react-router"
 
 export const GenreListPreviewPage = () => {
     const [menuOpen, setMenuOpen] = useState(false)
-
+    
     const location = useLocation();
     const { catId } = location.state
 

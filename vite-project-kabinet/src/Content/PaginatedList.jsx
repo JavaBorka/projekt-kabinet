@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { getPostsPreview } from "../constants/getPostsPreview.js";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
+import Masonry,  { ResponsiveMasonry } from "react-responsive-masonry";
 
 export const PaginatedList = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -26,10 +27,12 @@ export const PaginatedList = () => {
     return (
         <>
             <section className="card__container">
-                {items
-                    .map((item) => (
-                    <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
-                ))}
+                    <Masonry>
+                        {items
+                            .map((item) => (
+                            <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
+                        ))}
+                    </Masonry>
             </section>
 
             <PaginationNav currentPage={currentPage} totalPages={totalPages} handlePageChange={handlePageChange}/>
