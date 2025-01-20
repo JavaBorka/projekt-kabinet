@@ -15,8 +15,8 @@ export const HomepageContent = () => {
   return (
     <main>
     { viewportWidth < 600
-      ? <LoadedList itemsPerPage={4}/>
-      : <PaginatedList itemsPerPage={9}/>
+      ? <LoadedList/>
+      : <PaginatedList/>
     }
     </main>
   )
