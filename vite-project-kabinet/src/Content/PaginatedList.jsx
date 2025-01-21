@@ -6,6 +6,7 @@ import { PaginationNav } from "./PaginationNav.jsx";
 import { getPostsPreview } from "../constants/getPostsPreview.js";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
 // import Masonry from "react-responsive-masonry";
+import { getAnimatedCard } from "../constants/getAnimatedCard.js";
 
 export const PaginatedList = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -23,6 +24,10 @@ export const PaginatedList = () => {
             setItems(data)
         })
     }, [currentPage])
+
+    useEffect(() => {
+        getAnimatedCard()
+    }, [items]);
 
     return (
         <>

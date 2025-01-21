@@ -6,6 +6,7 @@ import { PaginationNav } from "./PaginationNav.jsx";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
 import { getPostsPreviewGenre } from "../constants/getPostsPreviewGenre.js";
 // import Masonry from "react-responsive-masonry";
+import { getAnimatedCard } from "../constants/getAnimatedCard.js";
 
 export const GenrePaginatedList = ({catId}) => {
 
@@ -24,6 +25,10 @@ export const GenrePaginatedList = ({catId}) => {
             setItems(data)
         })
     }, [currentPage])
+
+    useEffect(() => {
+        getAnimatedCard()
+    }, [items]);
 
     return (
         <>
