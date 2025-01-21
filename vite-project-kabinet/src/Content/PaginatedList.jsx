@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { getPostsPreview } from "../constants/getPostsPreview.js";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
-// import Masonry from "react-responsive-masonry";
 import { getAnimatedCard } from "../constants/getAnimatedCard.js";
 
 export const PaginatedList = () => {
@@ -32,10 +31,10 @@ export const PaginatedList = () => {
     return (
         <>
             <section className="card__container">
-                        {items
-                            .map((item) => (
-                            <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
-                        ))}
+                    {items
+                        .map((item) => (
+                        <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
+                    ))}
             </section>
 
             <PaginationNav currentPage={currentPage} totalPages={totalPages} handlePageChange={handlePageChange}/>

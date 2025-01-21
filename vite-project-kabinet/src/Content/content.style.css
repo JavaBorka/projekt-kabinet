@@ -25,13 +25,10 @@ main {
   }
 }
 
-.card__container {
-  margin: 0;
-}
 
-/* Masonry layout nahrazuje stylování viz. níže */
+/* Masonry layout (knihovna react-responsive-masonry) nahrazuje stylování viz. níže */
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
   .card__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -43,4 +40,25 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+} */
+
+.card__container {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .card__container {
+    column-count: 2;
+    column-gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .card__container {
+    column-count: 3;
+  }
+}
+
+.card {
+  break-inside: avoid; /* Prevent items from breaking across columns */
 }
