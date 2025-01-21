@@ -9,7 +9,10 @@ export const PaginationNav = ({currentPage, totalPages, handlePageChange}) => {
             {currentPage > 1 &&
                 <button
                     className="btn btn-desktop"
-                    onClick={() => handlePageChange(currentPage - 1)}
+                    onClick={() => {
+                        handlePageChange(currentPage - 1);
+                        document.getElementById('top').focus()
+                    }}
                     disabled={currentPage === 1}
                 >
                     <img src={arrowLeft} alt="šípka vľavo"/>
@@ -25,7 +28,10 @@ export const PaginationNav = ({currentPage, totalPages, handlePageChange}) => {
             {currentPage < totalPages && 
                 <button
                     className="btn btn-desktop"
-                    onClick={() => handlePageChange(currentPage + 1)}
+                    onClick={() => {
+                        handlePageChange(currentPage + 1);
+                        document.getElementById('top').focus()
+                    }}
                 >
                     <img src={arrowRight} alt="šípka vpravo"/>
                 </button>

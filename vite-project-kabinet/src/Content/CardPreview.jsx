@@ -48,4 +48,4 @@ export const CardPreview = ({id, genre, title, author, content, image}) => {
                 </Link>
             </div>
     )
-  }
+}
