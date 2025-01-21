@@ -29,18 +29,18 @@ main {
   margin: 0;
 }
 
-/* Aktivovala jsem Masonry layout, který nahrazuje stylování viz. níže */
+/* Masonry layout nahrazuje stylování viz. níže */
 
-/* @media screen and (min-width: 600px) {
+@media screen and (min-width: 600px) {
   .card__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-} */
+}
 
-/* @media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
   .card__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-} */
+}
