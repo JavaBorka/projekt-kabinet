@@ -58,7 +58,3 @@ main {
     column-count: 3;
   }
 }
-
-.card {
-  break-inside: avoid; /* Prevent items from breaking across columns */
-}

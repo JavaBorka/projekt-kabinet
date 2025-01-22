@@ -6,6 +6,8 @@
 
 .card {
     margin: 0 80px 40px 80px;
+    transition: background-color 0.4s ease-in-out;
+    break-inside: avoid; /* Prevent items from breaking across columns */
 }
 
 @media screen and (min-width: 600px) {
@@ -43,15 +45,19 @@
     width: 100%;
 }
 
+.card--image img {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
 @media screen and (min-width: 600px) {
     .card--texts:hover {
-        background-color: rgb(143, 217, 251, 0.59);
+        background-color: rgb(143, 217, 251, 0.40);
     }
 }
 
 @media screen and (min-width: 600px) {
     .card--essay:hover {
-        background-color: rgb(254, 246, 141, 0.85);
+        background-color: rgb(254, 246, 141, 0.75);
     }
 }
 
