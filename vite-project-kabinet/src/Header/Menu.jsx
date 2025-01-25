@@ -1,7 +1,8 @@
+import { set } from "date-fns"
 import { MenuList } from "./MenuList.jsx"
 import './menu.style.css'
 
-export const Menu = ({menuOpen, setMenuOpen}) => { 
+export const Menu = ({menuOpen, setMenuOpen}) => {
 
     return (
         <section className="menu">
@@ -14,7 +15,7 @@ export const Menu = ({menuOpen, setMenuOpen}) => {
             {menuOpen ? "✕" : "☰"}
             </button>
 
-            <MenuList/>
+            <MenuList setMenuOpen={setMenuOpen}/>
         </section>
     )
   }

@@ -1,17 +1,17 @@
 import { Link } from 'react-router'
 import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW } from '../constants/routes.constants.js'
 
-export const MenuList = () => {
+export const MenuList = ({setMenuOpen}) => {
 
     return (
         <ul className="menu__list">
             <li className="menu__eseje">
-                <Link className="menu__link menu__link--eseje" to={`/${ROUTE_ESSAYS}`}>
+                <Link className="menu__link menu__link--eseje" to={`/${ROUTE_ESSAYS}`} onClick={()=>{setMenuOpen(false)}}>
                     eseje
                 </Link>
             </li>
             <li className="menu__texty">
-                <Link className="menu__link menu__link--texty" to={`/${ROUTE_TEXTS}`}>
+                <Link className="menu__link menu__link--texty" to={`/${ROUTE_TEXTS}`} onClick={()=>{setMenuOpen(false)}}>
                     texty
                 </Link>
                 <ul className="menu__dropdown">
