@@ -30,4 +30,5 @@
 
 .header__logo {
     width: 190px;
+    cursor: pointer;
 }
