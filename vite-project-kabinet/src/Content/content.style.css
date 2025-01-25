@@ -44,17 +44,20 @@ main {
 
 .card__container {
   margin: 0;
+  min-height: calc(100vh - (110px + 220.2px + 50px + 40px));
 }
 
 @media screen and (min-width: 600px) {
   .card__container {
     column-count: 2;
     column-gap: 10px;
+    min-height: calc(100vh - (154.56px + 220.2px + 50px + 60px));
   }
 }
 
 @media screen and (min-width: 1000px) {
   .card__container {
     column-count: 3;
+    min-height: calc(100vh - (169.56px + 220.2px + 50px + 60px));
   }
 }
