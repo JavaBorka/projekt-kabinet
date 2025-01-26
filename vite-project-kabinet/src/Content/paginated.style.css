@@ -48,6 +48,13 @@
     font-weight: 300;
 }
 
+.btn-left:disabled {
+    cursor: not-allowed;
+}
+
+.btn-right:disabled {
+    cursor: not-allowed;
+}
 
 .btn-desktop {
     width: 30px;

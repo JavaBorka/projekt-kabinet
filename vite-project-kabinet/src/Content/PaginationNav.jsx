@@ -6,9 +6,9 @@ export const PaginationNav = ({currentPage, totalPages, handlePageChange}) => {
 
     return (
         <div className="pages_pc">
-            {currentPage > 1 &&
+            {currentPage >= 1 &&
                 <button
-                    className="btn btn-desktop"
+                    className="btn btn-desktop btn-left"
                     onClick={() => {
                         handlePageChange(currentPage - 1);
                         document.getElementById('top').focus()
@@ -21,17 +21,18 @@ export const PaginationNav = ({currentPage, totalPages, handlePageChange}) => {
 
             <ul className="pages__numbers">
                 <li>
-                    <button className="btn btn-desktop">{currentPage}</button>
+                    <button className="btn btn-desktop ">{currentPage}</button>
                 </li>
             </ul>
 
-            {currentPage < totalPages && 
+            {currentPage <= totalPages && 
                 <button
-                    className="btn btn-desktop"
+                    className="btn btn-desktop btn-right"
                     onClick={() => {
                         handlePageChange(currentPage + 1);
                         document.getElementById('top').focus()
                     }}
+                    disabled={currentPage === totalPages}
                 >
                     <img src={arrowRight} alt="šípka vpravo"/>
                 </button>
