@@ -21,7 +21,7 @@ export const PaginationNav = ({currentPage, totalPages, handlePageChange}) => {
 
             <ul className="pages__numbers">
                 <li>
-                    <button className="btn btn-desktop ">{currentPage}</button>
+                    <button className="btn btn-desktop btn-number">{currentPage}</button>
                 </li>
             </ul>
 

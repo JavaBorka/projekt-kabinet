@@ -33,6 +33,10 @@
     gap: 10px;
 }
 
+.pages__numbers .btn-number {
+    pointer-events: none;
+}
+
 .pages img {
     width: 35%;
 }
