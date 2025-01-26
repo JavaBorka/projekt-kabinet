@@ -1,0 +1,32 @@
+.about-kabinet {
+    margin: 10px 60px 60px 60px;
+    line-height: 1.8;
+}
+
+@media screen and (min-width: 600px) {
+    .about-kabinet {
+        margin: 20px 160px 70px 160px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .about-kabinet {
+        margin: 20px 300px 70px 300px;
+    }
+}
+
+.about-kabinet__item {
+    margin-top: 35px;
+}
+
+.about-kabinet__item h1 {
+    font-size: 15px;
+    font-weight: 380;
+    color: #DC4345;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.about-kabinet__item p {
+    margin-top: 8px;
+}
