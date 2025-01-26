@@ -2,15 +2,42 @@
 /* pagination */
 /**************/
 
+
 .pages_pc {
     display: none;
 }
 
 @media screen and (min-width: 600px) {
+    .pages__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 0
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .pages__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        margin: 0
+    }
+}
+
+@media screen and (min-width: 600px) {
     .pages_pc {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        grid-column: 2;
         margin-top: 30px;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .pages_pc {
+        grid-column: 3;
     }
 }
 
