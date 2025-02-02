@@ -1,6 +1,6 @@
 import gsap from "gsap"
 
-export const getAnimatedCard = () => {
+export const observeCardAnimations = () => {
 
     const animateCard = (cardElement) => {
         gsap.fromTo(
@@ -23,13 +23,6 @@ export const getAnimatedCard = () => {
         threshold: 0.2,  // Karta je považována za viditelnou, pokud je alespoň z 20 % na obrazovce
         }
     );
-    
-    // Připojíme observer k každé kartě
-    const cards = document.querySelectorAll(".card"); 
-    cards.forEach((card) => observer.observe(card));
-    
-    // Vyčistí observer při unmountu komponenty
-    return () => {
-        cards.forEach((card) => observer.unobserve(card));
-    }
+
+    return observer
 }

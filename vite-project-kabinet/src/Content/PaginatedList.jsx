@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { getPostsPreview } from "../constants/getPostsPreview.js";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
-import { getAnimatedCard } from "../constants/getAnimatedCard.js";
+import { useCardAnimations } from "../constants/useCardAnimations.js";
 
 export const PaginatedList = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -24,9 +24,8 @@ export const PaginatedList = () => {
         })
     }, [currentPage])
 
-    useEffect(() => {
-        getAnimatedCard()
-    }, [items]);
+    // Vytvářím vlastní hook
+    useCardAnimations({items})
 
     return (
         <>
