@@ -1,17 +1,21 @@
+/* min-height: calc(100vh - (header + footer + .article margin)) */
 .article {
     margin: 10px 60px 60px 60px;
     line-height: 1.8;
+    min-height: calc(100vh - (110px + 250px + 70px))
 }
 
 @media screen and (min-width: 600px) {
     .article {
         margin: 20px 160px 70px 160px;
+        min-height: calc(100vh - (155px + 250px + 90px))
     }
 }
 
 @media screen and (min-width: 1100px) {
     .article {
         margin: 20px 240px 70px 240px;
+        min-height: calc(100vh - (170px + 250px + 90px)); 
     }
 }
 
@@ -101,4 +105,102 @@
     pointer-events: none;
     cursor: default;
     color: inherit;
+}
+
+/* Loader image */
+
+.article--mob-align {
+    padding-top: 50px;
+}
+
+@media screen and (min-width: 600px) {
+    .article--mob-align {
+        padding-top: 0px;
+    }
+}
+
+.article__loader-image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 300px) {
+
+    .article__loader-image-layer1 {
+        width: 32%;
+        animation: rotate 11s linear infinite;
+    }
+
+    .article__loader-image-layer2 {
+        width: 20%;
+        position: absolute;
+        top: 19%
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .article__loader-image-layer1 {
+        width: 45%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 27%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+
+    .article__loader-image-layer1 {
+        width: 30%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 18%;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .article__loader-image-layer1 {
+        width: 25%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 16%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    .article__loader-image-layer1 {
+        width: 25%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 16%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .article__loader-image-layer1 {
+        width: 20%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 13%;
+        top: 19%
+    }
 }

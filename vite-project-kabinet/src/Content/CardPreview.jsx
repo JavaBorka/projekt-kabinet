@@ -40,7 +40,13 @@ export const CardPreview = ({id, genre, title, author, content, image}) => {
 
     return (
             <div className={cardClassName()}>
-                <Link to = {createRoute(title, genre, id)} className="card__link">
+                <Link to = {
+                    createRoute(title, genre, id)} 
+                    className="card__link" 
+                    onClick={() => {
+                            document.getElementById('top').focus()
+                    }
+                }>
                     <h1 className="card__name">{title}</h1>
                     <p className="card__author">{author}</p>
                     { image && <Image image={image} content={content}/> }
