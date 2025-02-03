@@ -30,3 +30,7 @@
 .about-kabinet__item p {
     margin-top: 8px;
 }
+
+address {
+    font-style: normal
+}

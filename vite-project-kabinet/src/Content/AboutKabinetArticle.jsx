@@ -26,7 +26,7 @@ export const AboutKabinetArticle = () => {
                     Barbora Lendacká
                 </p>
             </div>
-            <div className="about-kabinet__item">
+            <address className="about-kabinet__item">
                 <h1>Kontakty</h1>
                 <p>
                     Kabinet pomalosti<br />
@@ -45,7 +45,7 @@ export const AboutKabinetArticle = () => {
                  <p>
                     ISSN  2729-7993
                 </p>
-            </div>
+            </address>
             <div className="about-kabinet__item">
                 <h1>Bankové údaje</h1>
                 <p>
