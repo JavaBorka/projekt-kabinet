@@ -79,7 +79,7 @@ export const CardFullArticle = () => {
         <>
             {isLoaded ? <Loader/> : (
                 <main>
-                    <article className="article">
+                    <article className="article article--width">
                         <header className="article__header">
                             <h1 className="article__title">{item.title}</h1>
                             <span className="article__author">{item.author}</span>
