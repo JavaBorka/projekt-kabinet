@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getPostsPreviewMob } from "../constants/getPostsPreviewMob.js";
 import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPage.constants.js";
 import { useCardAnimations } from "../constants/useCardAnimations.js";
+import "./content.style.css"
 
 export const LoadedList = () => {
 

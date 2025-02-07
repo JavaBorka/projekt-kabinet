@@ -103,3 +103,7 @@
     color: inherit;
     display: block;
 }
+
+.card__container--hidden-content {
+    visibility: hidden;
+}

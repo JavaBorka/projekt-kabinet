@@ -78,22 +78,20 @@ export const CardFullArticle = () => {
 
     return (
         <>
-            {isLoading ? null : (
-                <main>
-                    <article className="article article--width">
-                        <header className="article__header">
-                            <h1 className="article__title">{item.title}</h1>
-                            <span className="article__author">{item.author}</span>
-                            <span className="article__date">{item.date}</span>
-                        </header>
-        
-                        <section
-                            className="article__content"
-                            dangerouslySetInnerHTML={{ __html: modifiedContent }}
-                        />
-                    </article>
-                </main>
-            )}
+            <main>
+                <article className={`article article--width ${isLoading ? "article--hidden-content" : ""}`}>
+                    <header className="article__header">
+                        <h1 className="article__title">{item.title}</h1>
+                        <span className="article__author">{item.author}</span>
+                        <span className="article__date">{item.date}</span>
+                    </header>
+    
+                    <section
+                        className="article__content"
+                        dangerouslySetInnerHTML={{ __html: modifiedContent }}
+                    />
+                </article>
+            </main>
         </>
     )
 }

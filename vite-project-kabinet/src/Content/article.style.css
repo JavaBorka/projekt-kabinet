@@ -79,6 +79,9 @@
     }
 }
 
+.article--hidden-content {
+    visibility: hidden;
+}
 
 /* .article p {
     border: 1px solid transparent;

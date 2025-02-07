@@ -1,3 +1,5 @@
+// Na stránce se zobrazí dudek. V projektu se nepoužívá, klient to nechtěl.
+
 import loader_layer1 from "../Content/assets/logo_transparent_layer1.png"
 import loader_layer2 from "../Content/assets/logo_transparent_layer2.png"
 import "./article.style.css"
