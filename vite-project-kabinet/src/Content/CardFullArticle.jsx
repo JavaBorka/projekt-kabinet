@@ -5,12 +5,12 @@ import { useParams } from "react-router"
 import { React } from "react"
 import { format } from "date-fns"
 import { cs } from "date-fns/locale"
-import { Loader } from "./Loader"
+// import { Loader } from "./Loader"
 
 export const CardFullArticle = () => {
 
     const [item, setItem] = useState({})
-    const [isLoaded, setIsLoaded] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
 
     const { title } = useParams()
 
@@ -32,7 +32,8 @@ export const CardFullArticle = () => {
     useEffect(() => {
         getPostObject().then((data) => {
             setItem(data)
-            setTimeout(() => setIsLoaded(false), 1000)
+            // setTimeout(() => setIsLoaded(false), 1000)
+            setIsLoading(false)
         })
     }, [])
 
@@ -77,7 +78,7 @@ export const CardFullArticle = () => {
 
     return (
         <>
-            {isLoaded ? <Loader/> : (
+            {isLoading ? null : (
                 <main>
                     <article className="article article--width">
                         <header className="article__header">
