@@ -1,5 +1,5 @@
 import { stripHTMLTags } from "../utils/stripHtmlTags"
-import { getImage } from "./getImage"
+import { getImageSrc } from "./getImageSrc"
 
 export const getPostsWithGenreName = (posts, categories) => {
 
@@ -14,7 +14,7 @@ export const getPostsWithGenreName = (posts, categories) => {
             author: post.acf.autor ? post.acf.autor : "Autor XY",
             perex: stripHTMLTags(post.excerpt.rendered),
             id: post.id,
-            image: getImage(post),
+            image: getImageSrc(post),
             title: post.title.rendered,
             genre: newPostCategsArray.join(),
         }

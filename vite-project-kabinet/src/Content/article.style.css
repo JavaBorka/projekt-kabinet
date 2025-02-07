@@ -1,18 +1,86 @@
+/* min-height: calc(100vh - (header + footer + .article margin)) */
 .article {
     margin: 10px 60px 60px 60px;
     line-height: 1.8;
+    min-height: calc(100vh - (110px + 250px + 70px))
 }
 
 @media screen and (min-width: 600px) {
     .article {
         margin: 20px 160px 70px 160px;
+        min-height: calc(100vh - (155px + 250px + 90px))
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .article {
+        margin: 20px 240px 70px 240px;
+        min-height: calc(100vh - (170px + 250px + 90px)); 
+    }
+}
+
+.article--width {
+    margin-right: 50px;
+}
+
+@media screen and (min-width: 600px) {
+    .article--width {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .article--width {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .article--width {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .article--width {
+        margin-right: 90px;
+        margin-left: 90px;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .article {
-        margin: 20px 240px 70px 240px;
+    .article--width {
+        margin-right: 120px;
+        margin-left: 120px;
     }
+}
+
+@media screen and (min-width: 1200px) {
+    .article--width {
+        margin-right: 140px;
+        margin-left: 140px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .article--width {
+        margin-right: 150px;
+        margin-left: 150px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .article--width {
+        margin-right: 180px;
+        margin-left: 180px;
+    }
+}
+
+.article--hidden-content {
+    visibility: hidden;
 }
 
 /* .article p {
@@ -39,7 +107,7 @@
 .article__author {
     font-family: Urbanist;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 450;
     color: #DC4345;
     text-transform: uppercase;
 }
@@ -52,25 +120,151 @@
     height: auto;
     object-fit: cover;
     display: block;
-    margin: 0 auto 10px auto;
+    margin-bottom: 10px
 }
+
+/* Wordpress obaluje obrázky s popiskem tagem <figure> s třídou .wp-caption */
+.wp-caption {
+    all: unset; /* Zruší veškeré předchozí stylování */
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+}
+
+/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. */
+.article__content figcaption {
+    text-align: left;
+    margin-bottom: 35px;
+}
+
 
 .article__img--tall {
     width: 65%;
 }
 
 .article__img--wide {
-    width: 94%;
+    width: 85%;
+}
+
+.article__content blockquote p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 470;
+    margin: 30px;
 }
 
 .article__content p {
     text-align: left;
+    margin: 30px 0;
 }
 
-/* Popisek obrázku "Titulok" je potřeba ve WP vkládat přímo v nastavení obrázku. */
-.article__content figcaption {
-    text-align: center;
-    margin-bottom: 35px;
+.article__content p strong,
+.article__content p b {
+    font-weight: 470
 }
 
-/* Pro zvýraznění textu nepoužívat bold, ale nastavit font-weight (jakékoliv hodnoty od 300 do 900) */
+.article__content a {
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+    color: inherit;
+}
+
+/* Loader image */
+
+.article--mob-align {
+    padding-top: 50px;
+}
+
+@media screen and (min-width: 600px) {
+    .article--mob-align {
+        padding-top: 0px;
+    }
+}
+
+.article__loader-image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 300px) {
+
+    .article__loader-image-layer1 {
+        width: 32%;
+        animation: rotate 11s linear infinite;
+    }
+
+    .article__loader-image-layer2 {
+        width: 20%;
+        position: absolute;
+        top: 19%
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .article__loader-image-layer1 {
+        width: 45%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 27%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+
+    .article__loader-image-layer1 {
+        width: 30%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 18%;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .article__loader-image-layer1 {
+        width: 25%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 16%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    .article__loader-image-layer1 {
+        width: 25%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 16%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .article__loader-image-layer1 {
+        width: 20%;
+    }
+
+    .article__loader-image-layer2 {
+        width: 13%;
+        top: 19%
+    }
+}

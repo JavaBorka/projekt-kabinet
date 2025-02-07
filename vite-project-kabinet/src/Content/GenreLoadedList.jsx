@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getPostsPreviewGenreMob } from "../constants/getPostsPreviewGenreMob.js";
 import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPage.constants.js";
+import { useCardAnimations } from "../constants/useCardAnimations.js";
 
 export const GenreLoadedList = ({catId}) => {
 
@@ -16,6 +17,9 @@ export const GenreLoadedList = ({catId}) => {
             setItems(data)
         })
     }, [visibleCount])
+
+    // Vytvářím vlastní hook
+    useCardAnimations({items})
 
     return (
         <>

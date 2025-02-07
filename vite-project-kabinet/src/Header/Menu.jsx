@@ -1,10 +1,8 @@
+import { set } from "date-fns"
 import { MenuList } from "./MenuList.jsx"
 import './menu.style.css'
-import { useNavigate } from "react-router"
 
-export const Menu = ({menuOpen, setMenuOpen}) => { 
-
-    const navigate = useNavigate()
+export const Menu = ({menuOpen, setMenuOpen}) => {
 
     return (
         <section className="menu">
@@ -12,13 +10,12 @@ export const Menu = ({menuOpen, setMenuOpen}) => {
                 className="menu__hamburger"
                 onClick={() => {
                     setMenuOpen(!menuOpen)
-                    navigate("/")
                 }}
             >
             {menuOpen ? "✕" : "☰"}
             </button>
 
-            <MenuList/>
+            <MenuList setMenuOpen={setMenuOpen}/>
         </section>
     )
   }

@@ -5,10 +5,12 @@ import { useParams } from "react-router"
 import { React } from "react"
 import { format } from "date-fns"
 import { cs } from "date-fns/locale"
+// import { Loader } from "./Loader"
 
 export const CardFullArticle = () => {
 
     const [item, setItem] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
 
     const { title } = useParams()
 
@@ -21,7 +23,7 @@ export const CardFullArticle = () => {
     
         return {
             title: post.title.rendered,
-            author: "Názov autora",
+            author: post.acf.autor ? post.acf.autor : "Autor XY",
             date: format(new Date(post.date), "dd. MM. yyyy", { locale: cs }),
             content: post.content.rendered
         }
@@ -30,6 +32,8 @@ export const CardFullArticle = () => {
     useEffect(() => {
         getPostObject().then((data) => {
             setItem(data)
+            // setTimeout(() => setIsLoaded(false), 1000)
+            setIsLoading(false)
         })
     }, [])
 
@@ -43,15 +47,22 @@ export const CardFullArticle = () => {
         // přidání třídy obrázkům
         const images = doc.querySelectorAll('img')
         images.forEach((img) => {
+
             img.classList.add("article__img")
 
             const width = img.getAttribute('width');
             const height = img.getAttribute('height');
 
+            // Popisek obrázku musí mít stejnou šířku odstavce jako má obrázek
+            const figCaption = img.nextElementSibling
+
             if (parseInt(height) > parseInt(width)) {
                 img.classList.add("article__img--tall")
+                figCaption && figCaption.classList.add("article__img--tall")
+
             } else {
                 img.classList.add("article__img--wide")
+                figCaption && figCaption.classList.add("article__img--wide")
             }
         })
     
@@ -66,19 +77,21 @@ export const CardFullArticle = () => {
     const modifiedContent = addClassToImages(item.content)
 
     return (
-        <main>
-            <article className="article">
-                <header className="article__header">
-                    <h1 className="article__title">{item.title}</h1>
-                    <span className="article__author">{item.author}</span>
-                    <span className="article__date">{item.date}</span>
-                </header>
-
-                <section
-                    className="article__content"
-                    dangerouslySetInnerHTML={{ __html: modifiedContent }}
-                />
-            </article>
-        </main>
+        <>
+            <main>
+                <article className={`article article--width ${isLoading ? "article--hidden-content" : ""}`}>
+                    <header className="article__header">
+                        <h1 className="article__title">{item.title}</h1>
+                        <span className="article__author">{item.author}</span>
+                        <span className="article__date">{item.date}</span>
+                    </header>
+    
+                    <section
+                        className="article__content"
+                        dangerouslySetInnerHTML={{ __html: modifiedContent }}
+                    />
+                </article>
+            </main>
+        </>
     )
 }

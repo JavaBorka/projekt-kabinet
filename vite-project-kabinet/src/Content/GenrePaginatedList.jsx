@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { PaginationNav } from "./PaginationNav.jsx";
 import { ITEMS_PER_PAGE } from "../constants/itemsPerPage.constants.js";
 import { getPostsPreviewGenre } from "../constants/getPostsPreviewGenre.js";
+import { useCardAnimations } from "../constants/useCardAnimations.js";
 
 export const GenrePaginatedList = ({catId}) => {
 
@@ -24,13 +25,16 @@ export const GenrePaginatedList = ({catId}) => {
         })
     }, [currentPage])
 
+    // Vytvářím vlastní hook
+    useCardAnimations({items})
+
     return (
         <>
             <section className="card__container">
-                {items
-                    .map((item) => (
-                    <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
-                ))}
+                    {items
+                        .map((item) => (
+                        <CardPreview key={item.id} id={item.id} genre={item.genre} title={item.title} author={item.author} content={item.perex} image={item.image}/>
+                    ))}
             </section>
 
             <PaginationNav currentPage={currentPage} totalPages={totalPages} handlePageChange={handlePageChange}/>

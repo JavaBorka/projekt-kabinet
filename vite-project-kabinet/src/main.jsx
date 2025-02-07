@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router"
 import './index.css'
 import { App } from './App.jsx'
 import { CardDetailPage } from "./Content/CardDetailPage.jsx"
-import { ROUTE_ESSAYS, ROUTE_TEXTS } from "./constants/routes.constants.js"
+import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_ABOUT } from "./constants/routes.constants.js"
 import { GenreListPreviewPage } from "./Content/GenreListPreviewPage.jsx"
 import { GenreListPreviewWrapper } from "./Content/GenreListPreviewWrapper.jsx"
+import { WP_CAT_ID_ESSAY, CAT_ID_TEXTS } from "./constants/WPcategories.constants.js"
+import { AboutKabinetPage } from "./Content/AboutKabinetPage.jsx"
 
 const root = document.getElementById("root");
 
@@ -20,8 +22,9 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App key={"app-root"}/>}/>
-      <Route path={`/${ROUTE_ESSAYS}`} element={<GenreListPreviewPage key={ROUTE_ESSAYS}/>}/>
-      <Route path={`/${ROUTE_TEXTS}`} element={<GenreListPreviewPage key={ROUTE_TEXTS}/>}/>
+      <Route path={`/${ROUTE_ESSAYS}`} element={<GenreListPreviewPage key={ROUTE_ESSAYS} catId={WP_CAT_ID_ESSAY}/>}/>
+      <Route path={`/${ROUTE_TEXTS}`} element={<GenreListPreviewPage key={ROUTE_TEXTS} catId={CAT_ID_TEXTS}/>}/>
+      <Route path={`/${ROUTE_ABOUT}`} element={<AboutKabinetPage/>} key={ROUTE_ABOUT}/>
       <Route path={`/${ROUTE_TEXTS}/:genre`} element={<GenreListPreviewWrapper/>}/>
       <Route path={`/${ROUTE_ESSAYS}/:title`} element={<CardDetailPage/>}/>
       <Route path={`/${ROUTE_TEXTS}/:genre/:title`}  element={<CardDetailPage/>}/>

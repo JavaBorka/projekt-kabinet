@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getPostsPreviewMob } from "../constants/getPostsPreviewMob.js";
 import { ITEMS_PER_PAGE_MOB } from "../constants/itemsPerPage.constants.js";
+import { useCardAnimations } from "../constants/useCardAnimations.js";
+import "./content.style.css"
 
 export const LoadedList = () => {
 
@@ -11,13 +13,14 @@ export const LoadedList = () => {
     const [totalRecords, setTotalRecords] = useState(0)
     const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE_MOB)
 
-    getPostsPreviewMob(visibleCount, setTotalRecords)
-
     useEffect(() => {
         getPostsPreviewMob(visibleCount, setTotalRecords).then((data) => {
             setItems(data)
         })
     }, [visibleCount])
+
+    // Vytvářím vlastní hook
+    useCardAnimations({items})
 
     return (
         <>

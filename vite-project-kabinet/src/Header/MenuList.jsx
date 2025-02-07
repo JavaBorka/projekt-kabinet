@@ -1,50 +1,56 @@
 import { Link } from 'react-router'
-import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW } from '../constants/routes.constants.js'
-import { WP_CAT_ID_PROSE, WP_CAT_ID_POEM, WP_CAT_ID_DIARY, WP_CAT_ID_INTERVIEW, WP_CAT_ID_REVIEW, WP_CAT_ID_ESSAY, CAT_ID_TEXTS } from '../constants/WPcategories.constants.js'
+import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW, ROUTE_ABOUT, ROUTE_CRITICISM } from '../constants/routes.constants.js'
 
-export const MenuList = () => {
+export const MenuList = ({setMenuOpen}) => {
 
     return (
         <ul className="menu__list">
             <li className="menu__eseje">
-                <Link className="menu__link menu__link--eseje" to={`/${ROUTE_ESSAYS}`} state={{catId: WP_CAT_ID_ESSAY}}>
+                <Link className="menu__link menu__link--eseje" to={`/${ROUTE_ESSAYS}`} onClick={()=>{setMenuOpen(false)}}>
                     eseje
                 </Link>
             </li>
             <li className="menu__texty">
-                <Link className="menu__link menu__link--texty" to={`/${ROUTE_TEXTS}`} state={{catId: CAT_ID_TEXTS}}>
+                <Link className="menu__link menu__link--texty" to={`/${ROUTE_TEXTS}`} onClick={()=>{setMenuOpen(false)}}>
                     texty
                 </Link>
                 <ul className="menu__dropdown">
                     <li>
-                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_PROSE}`} state={{catId: WP_CAT_ID_PROSE}}>
-                            próza
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_POEM}`} state={{catId: WP_CAT_ID_POEM}}>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_POEM}`}>
                             básne
                         </Link>
                     </li>
                     <li>
-                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_DIARY}`}state={{catId: WP_CAT_ID_DIARY}}>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_CRITICISM}`}>
+                            kritika
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_DIARY}`}>
                             z diára
                         </Link>
                     </li>
                     <li>
-                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_INTERVIEW}`} state={{catId: WP_CAT_ID_INTERVIEW}}>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_INTERVIEW}`}>
                             rozhovor
                         </Link>
                     </li>
                     <li>
-                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_REVIEW}`} state={{catId: WP_CAT_ID_REVIEW}}>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_REVIEW}`}>
                             review
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_PROSE}`}>
+                            próza
                         </Link>
                     </li>
                 </ul>
             </li>
             <li className="menu__ocasopise">
-                <a className="menu__link menu__link--ocasopise" href="#ocasopise">o časopise</a>
+                <Link className="menu__link menu__link--ocasopise" to={`/${ROUTE_ABOUT}`} onClick={()=>{setMenuOpen(false)}}>
+                    o časopise
+                </Link>
             </li>
         </ul>
     )

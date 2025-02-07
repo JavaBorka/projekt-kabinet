@@ -1,11 +1,10 @@
 import { Header } from "../Header/Header.jsx"
 import { Footer } from "../Footer/Footer.jsx"
-import { useState } from "react"
 import { MenuList } from "../Header/MenuList.jsx"
-import "./article.style.css"
-import { GenreContent } from "./GenreContent.jsx"
+import { useState } from "react"
+import { AboutKabinetArticle } from "./AboutKabinetArticle.jsx"
 
-export const GenreListPreviewPage = ({catId}) => {
+export const AboutKabinetPage = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
@@ -15,8 +14,8 @@ export const GenreListPreviewPage = ({catId}) => {
 
                 {menuOpen && <section className="menu"><MenuList/></section>}
 
-                <GenreContent catId={catId}/>
-            
+                <AboutKabinetArticle/>
+
                 <Footer/>
             </div>
         </div>
