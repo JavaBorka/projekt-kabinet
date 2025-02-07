@@ -22,7 +22,6 @@ export const PaginatedList = () => {
     useEffect(() => {
         getPostsPreview(ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
             setItems(data)
-            setIsLoading(false)
         })
     }, [currentPage])
 
