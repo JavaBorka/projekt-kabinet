@@ -19,9 +19,9 @@ export const observeCardAnimations = () => {
             }
         });
         },
-        {
-        threshold: 0.2,  // Karta je považována za viditelnou, pokud je alespoň z 20 % na obrazovce
-        }
+        // {
+        // threshold: 0.1,  // Karta je považována za viditelnou, pokud je alespoň z 20 % na obrazovce
+        // }
     );
 
     return observer
