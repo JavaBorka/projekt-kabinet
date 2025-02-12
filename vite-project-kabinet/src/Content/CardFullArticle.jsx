@@ -48,6 +48,9 @@ export const CardFullArticle = () => {
         const images = doc.querySelectorAll('img')
         images.forEach((img) => {
 
+            img.src = img.src.replace("www.casopiskabinet.sk", "www.api.casopiskabinet.sk")
+            img.srcset = img.srcset.replaceAll("www.casopiskabinet.sk", "www.api.casopiskabinet.sk")
+
             img.classList.add("article__img")
 
             const width = img.getAttribute('width');
