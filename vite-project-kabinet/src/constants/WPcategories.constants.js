@@ -29,3 +29,13 @@ export const genresName = {
     14: "rozhovor",
     12: "z-diara"
 }
+
+export const newGenreSlug = {
+    esej: "eseje",
+    kritika: "kritika",
+    poezia: "basne",
+    proza: "proza",
+    zdiara: "z-diara",
+    vrozhovore: "rozhovor",
+    review: "review"
+}
