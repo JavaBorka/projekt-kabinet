@@ -1,10 +1,11 @@
 import "./about.style.css"
+import "./article.style.css"
 
 export const AboutKabinetArticle = () => {
     
     return (
         <main>
-            <div className="about-kabinet">
+            <div className="about-kabinet article article--width">
                 <div className="about-kabinet__item">
                     <p>
                         Internetový časopis Kabinet pre literatúru a kultúru vydáva občianske združenie Upupa epops od roku 2020.
