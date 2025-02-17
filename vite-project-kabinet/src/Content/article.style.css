@@ -107,8 +107,10 @@
 .article__author {
     font-family: Urbanist;
     font-size: 15px;
-    font-weight: 450;
-    color: #DC4345;
+    /* font-weight: 450; */
+    font-weight: 490;
+    /* color: #DC4345; */
+    color: #014181;
     text-transform: uppercase;
 }
 

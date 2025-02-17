@@ -150,7 +150,11 @@
     }
 
     .menu__link--eseje:hover {
-        color: #F1AA4C
+        /* color: #F1AA4C */
+        color: #f1da0b
+        /* color: #f1d20b */
+
+
     }
 
     .menu__link--texty:hover,
