@@ -7,4 +7,4 @@ export const ROUTE_INTERVIEW = "rozhovor"
 export const ROUTE_REVIEW = "review"
 export const ROUTE_CRITICISM = "kritika"
 
-export const ROUTE_ABOUT = "o-casopise"
+export const ROUTE_ABOUT = "o-kabinete"
