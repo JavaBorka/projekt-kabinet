@@ -8,10 +8,10 @@ export const AboutKabinetArticle = () => {
             <div className="about-kabinet article article--width">
                 <div className="about-kabinet__item">
                     <p>
-                        Internetový časopis Kabinet pre literatúru a kultúru vydáva občianske združenie Upupa epops od roku 2020.
+                        Internetový časopis Kabinet pre literatúru a kultúru vydáva od roku 2020 v Košiciach občianske združenie Upupa epops.
                     </p>
                     <p>
-                        Jeho vznik bol prirodzeným vyústením skúseností a podnetov získaných počas desiatok stretnutí, prednášok a diskusií organizovaných v Kabinete pomalosti Novej Cvernovky v Bratislave. Časopis nehľadá oporu v obvyklých rámcoch, nevymedzuje sa generačne, rodovo, ideologicky alebo regionálne, ale zakladá sa na presvedčení, že literatúra a uvažovanie o nej, pokiaľ majú mať zmysel, nemôžu byť svetom samým pre seba, ale prirodzene súvisia s inými prejavmi kultúry a s každodenným životom. Časopis sa vo svojich rubrikách sústreďuje na esejistické a autorské písanie a žánre súvisiace s literárnou reflexiou. Kabinet pomalosti a časopis Kabinet pre literatúru a kultúru spája snaha objavovať nové prístupy a publikovať texty, ktoré ich hľadajú. Svojim prispievateľom a čitateľom ponúka sústredenú kabinetnú atmosféru malého, zanieteného redakčného tímu.
+                        Časopis nehľadá oporu v obvyklých rámcoch, nevymedzuje sa generačne, rodovo, ideologicky, žánrovo alebo regionálne, ale zakladá sa na presvedčení, že literatúra a uvažovanie o nej nemusia iba napĺňať nejaký vopred daný účel, ale môžu mať zmysel. Kabinet sa vo svojich rubrikách sústreďuje na písanie, ktoré prirodzene súvisí s rozmanitými prejavmi kultúry, aj s každodenným životom. Eseje, básne, prózy, úvahy, či poznámky, ktoré uverejňuje, zdroj významu nehľadajú vonku, v určitom predmete, ale v objavovaní ľudsky osobitého vzťahu k nemu. Svojim prispievateľom a čitateľom ponúka sústredenú kabinetnú atmosféru malého redakčného tímu, ktorý nad textami dlho diskutuje.
                     </p>
                 </div>
                 <div className="about-kabinet__item">
@@ -31,12 +31,6 @@ export const AboutKabinetArticle = () => {
                 <address className="about-kabinet__item">
                     <h1>Kontakty</h1>
                     <p>
-                        Kabinet pomalosti<br />
-                        Nová Cvernovka<br />
-                        Račianska 78<br />
-                        831 02 Bratislava
-                    </p>
-                    <p>
                         Upupa epops, o. z.<br />
                         Nešporova 276/24<br />
                         040 11 Košice<br />
@@ -51,9 +45,6 @@ export const AboutKabinetArticle = () => {
                 <div className="about-kabinet__item">
                     <h1>Bankové údaje</h1>
                     <p>
-                        <em>Ďakujeme za vašu finančnú podporu časopisu</em>
-                    </p>
-                    <p>
                         Názov: Upupa epops o. z.<br />
                         Právna forma: Občianske združenie<br />
                         IČO: 50925750<br />
@@ -62,6 +53,10 @@ export const AboutKabinetArticle = () => {
                         PSČ: 040 11<br />
                         Bankový účet: SK3083300000002901547846<br />
                         Názov banky: Fio banka a.s.
+                    </p>
+
+                    <p>
+                        <em>Ďakujeme za vašu finančnú podporu časopisu</em>
                     </p>
                 </div>
             </div>
