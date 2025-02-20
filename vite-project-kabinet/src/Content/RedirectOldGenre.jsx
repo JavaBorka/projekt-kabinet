@@ -10,18 +10,15 @@ export const RedirectOldGenre = () => {
 
     useEffect(() => {
 
-        if (window.location.pathname === `/category/${genre}`) {
-
-            if (genre === "esej") {
-                navigate(`/${newGenreSlug[genre]}`, { replace: true });
-            }
-
-            else {
-                navigate(`/texty/${newGenreSlug[genre]}`, { replace: true });
-            }
+        if (genre === "esej") {
+            navigate(`/${newGenreSlug[genre]}`, { replace: true });
         }
 
-      }, [navigate]);
+        else {
+            navigate(`/texty/${newGenreSlug[genre]}`, { replace: true });
+        }
+
+    }, [genre, navigate]);
 
     return null
 }

@@ -2,9 +2,11 @@ import { useEffect } from "react"
 import { useParams } from "react-router"
 import { fetchSlugPost } from "../constants/fetchSlugPost"
 import { genresName } from "../constants/WPcategories.constants"
+import { useNavigate } from "react-router"
 
 export const RedirectOldArticle = () => {
     const { slug } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetchSlugPost(slug).then((data) => {
@@ -14,14 +16,13 @@ export const RedirectOldArticle = () => {
             const id = post.id
 
             if ( genre === "eseje") {
-                const newUrl = (`https://www.casopiskabinet.sk/eseje/${id}-${slug}`)
-                window.location.replace(newUrl);
-
+                navigate(`/eseje/${id}-${slug}`, { replace: true })
             }
             else {
-                const newUrl = (`https://www.casopiskabinet.sk/texty/${genre}/${id}-${slug}`)
-                window.location.replace(newUrl);
+                navigate(`/texty/${genre}/${id}-${slug}`, { replace: true })
             }
         })
-    }, [slug])
+    }, [slug, navigate])
+
+    return null
 }
