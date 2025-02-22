@@ -10,22 +10,17 @@ import { useSearchParams } from "react-router";
 
 export const GenrePaginatedList = ({catId}) => {
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const [items, setItems] = useState([])
-    const [totalPages, setTotalPages] = useState(0)
     const [searchParams, setSearchParams] = useSearchParams();
+    const initialPage = Number(searchParams.get('stranka')) || 1;
+    const [currentPage, setCurrentPage] = useState(initialPage);
+    const [totalPages, setTotalPages] = useState(0)
+    const [items, setItems] = useState([])
 
     const handlePageChange = (newPage) => {
         if (newPage >= 1 && newPage <= totalPages) {
             setCurrentPage(newPage);
         }
     };
-
-    useEffect(() => {
-        getPostsPreviewGenre(catId, ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
-            setItems(data)
-        })
-    }, [currentPage])
 
     // Při prvním načtení komponenty synchronizujeme currentPage s URL
     useEffect(() => {
@@ -39,6 +34,12 @@ export const GenrePaginatedList = ({catId}) => {
     useEffect(() => {
         setSearchParams({ stranka: currentPage });
     }, [currentPage, setSearchParams]);
+
+    useEffect(() => {
+        getPostsPreviewGenre(catId, ITEMS_PER_PAGE, currentPage, setTotalPages).then((data) => {
+            setItems(data)
+        })
+    }, [currentPage])
 
     // Vytvářím vlastní hook
     useCardAnimations({items})
