@@ -48,8 +48,15 @@ export const CardFullArticle = () => {
         const images = doc.querySelectorAll('img')
         images.forEach((img) => {
 
-            img.src = img.src.replace("https://casopiskabinet.sk", "https://api.casopiskabinet.sk")
-            img.srcset = img.srcset.replaceAll("https://casopiskabinet.sk", "https://api.casopiskabinet.sk")
+            const regex = /https?:\/\/www\.casopiskabinet\.sk/g;
+
+            images.forEach((img) => {
+            img.src = img.src.replace(regex, "https://api.casopiskabinet.sk");
+
+            if (img.srcset) {
+                img.srcset = img.srcset.replace(regex, "https://api.casopiskabinet.sk");
+            }
+            });
 
             img.classList.add("article__img")
 
