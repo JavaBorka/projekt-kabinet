@@ -5,7 +5,7 @@ import { useParams } from "react-router"
 import { React } from "react"
 import { format } from "date-fns"
 import { cs } from "date-fns/locale"
-// import { Loader } from "./Loader"
+import { BASE_API_URL } from "../constants/WPbaseAPI.constants"
 
 export const CardFullArticle = () => {
 
@@ -18,7 +18,7 @@ export const CardFullArticle = () => {
 
     const getPostObject = async () => {
 
-        const reqPost = await fetch(`https://www.casopiskabinet.sk/wp-json/wp/v2/posts/${id}`)
+        const reqPost = await fetch(`${BASE_API_URL}/posts/${id}`)
         const post = await reqPost.json()
     
         return {
@@ -48,8 +48,8 @@ export const CardFullArticle = () => {
         const images = doc.querySelectorAll('img')
         images.forEach((img) => {
 
-            img.src = img.src.replace("www.casopiskabinet.sk", "www.api.casopiskabinet.sk")
-            img.srcset = img.srcset.replaceAll("www.casopiskabinet.sk", "www.api.casopiskabinet.sk")
+            img.src = img.src.replace("https://casopiskabinet.sk", "https://api.casopiskabinet.sk")
+            img.srcset = img.srcset.replaceAll("https://casopiskabinet.sk", "https://api.casopiskabinet.sk")
 
             img.classList.add("article__img")
 
