@@ -9,6 +9,8 @@ import { GenreListPreviewPage } from "./Content/GenreListPreviewPage.jsx"
 import { GenreListPreviewWrapper } from "./Content/GenreListPreviewWrapper.jsx"
 import { WP_CAT_ID_ESSAY, CAT_ID_TEXTS } from "./constants/WPcategories.constants.js"
 import { AboutKabinetPage } from "./Content/AboutKabinetPage.jsx"
+import { RedirectOldArticle } from "./Content/RedirectOldArticle.jsx"
+import { RedirectOldGenre } from "./Content/RedirectOldGenre.jsx"
 
 const root = document.getElementById("root");
 
@@ -22,6 +24,8 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App key={"app-root"}/>}/>
+      <Route path="/:year/:month/:slug" element={<RedirectOldArticle/>}/>
+      <Route path="/category/:genre" element={<RedirectOldGenre/>}/>
       <Route path={`/${ROUTE_ESSAYS}`} element={<GenreListPreviewPage key={ROUTE_ESSAYS} catId={WP_CAT_ID_ESSAY}/>}/>
       <Route path={`/${ROUTE_TEXTS}`} element={<GenreListPreviewPage key={ROUTE_TEXTS} catId={CAT_ID_TEXTS}/>}/>
       <Route path={`/${ROUTE_ABOUT}`} element={<AboutKabinetPage/>} key={ROUTE_ABOUT}/>

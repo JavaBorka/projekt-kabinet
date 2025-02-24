@@ -17,3 +17,25 @@ export const genresID = {
     "review": 13,
     "kritika": 3,
 }
+
+export const genresName = {
+    4: "eseje",
+    3: "kritika",
+    1: "nezaradene",
+    11: "basne",
+    10: "pohlad",
+    15: "proza",
+    13: "review",
+    14: "rozhovor",
+    12: "z-diara"
+}
+
+export const newGenreSlug = {
+    esej: "eseje",
+    kritika: "kritika",
+    poezia: "basne",
+    proza: "proza",
+    zdiara: "z-diara",
+    vrozhovore: "rozhovor",
+    review: "review"
+}
