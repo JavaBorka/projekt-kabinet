@@ -19,7 +19,8 @@ export const AboutKabinetArticle = () => {
                     <p>
                         Juraj Briškár<br />
                         Laura Kladeková<br />
-                        Dalfar
+                        Dalfar<br />
+                        Martina Ivanová
                     </p>
                 </div>
                 <div className="about-kabinet__item">
