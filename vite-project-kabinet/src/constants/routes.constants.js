@@ -6,5 +6,6 @@ export const ROUTE_DIARY = "z-diara"
 export const ROUTE_INTERVIEW = "rozhovor"
 export const ROUTE_REVIEW = "review"
 export const ROUTE_CRITICISM = "kritika"
+export const ROUTE_NOTES = "poznamky"
 
 export const ROUTE_ABOUT = "o-kabinete"

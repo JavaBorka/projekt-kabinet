@@ -16,6 +16,7 @@ export const genresID = {
     "rozhovor": 14,
     "review": 13,
     "kritika": 3,
+    "poznamky": 16
 }
 
 export const genresName = {
@@ -27,7 +28,8 @@ export const genresName = {
     15: "proza",
     13: "review",
     14: "rozhovor",
-    12: "z-diara"
+    12: "z-diara",
+    16: "poznamky"
 }
 
 export const newGenreSlug = {
@@ -37,5 +39,6 @@ export const newGenreSlug = {
     proza: "proza",
     zdiara: "z-diara",
     vrozhovore: "rozhovor",
-    review: "review"
+    review: "review",
+    poznamky: "poznamky"
 }

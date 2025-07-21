@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW, ROUTE_ABOUT, ROUTE_CRITICISM } from '../constants/routes.constants.js'
+import { ROUTE_ESSAYS, ROUTE_TEXTS, ROUTE_PROSE, ROUTE_POEM, ROUTE_DIARY, ROUTE_INTERVIEW, ROUTE_REVIEW, ROUTE_ABOUT, ROUTE_CRITICISM, ROUTE_NOTES } from '../constants/routes.constants.js'
 
 export const MenuList = ({setMenuOpen}) => {
 
@@ -43,6 +43,11 @@ export const MenuList = ({setMenuOpen}) => {
                     <li>
                         <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_PROSE}`}>
                             próza
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="menu__link menu__link--dropdown" to={`/${ROUTE_TEXTS}/${ROUTE_NOTES}`}>
+                            poznámky
                         </Link>
                     </li>
                 </ul>
